@@ -15,9 +15,6 @@ ob_start();
 session_start();
 Core::$root="";
 
-// si quieres que se muestre las consultas SQL debes decomentar la siguiente linea
-// Core::$debug_sql = true;
-
 $lb = new Lb();
 $lb->start();
 
