@@ -39,27 +39,20 @@ function description($jb): string
 ?>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Vacantes</h1>
-            <div class="panel panel-default">
-                <div class="panel-heading">Lista de vacantes</div>
-                <div class="panel-body" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between">
-                    <?php foreach ($jobs as $jb) : ?>
-                        <div class="card border-secondary"
-                             style="width: 18rem; box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.30); padding: 10px">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= name($jb); ?></h5>
-                                <p class="card-text"><?= description($jb); ?></p>
-                                <a href="./?view=job&id=<?= $jb->id ?>" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-                    <?php endforeach;
-                    if (isEmpty($jobs)) : ?>
-                        <p class="alert alert-warning">No hay vacantes de trabajo por el momento.</p>
-                    <?php endif; ?>
+    <h1>Vacantes</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between">
+        <?php foreach ($jobs as $jb) : ?>
+            <div class="card border-secondary"
+                 style="min-width: 200px; width: 200px; box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.30); padding: 10px">
+                <div class="card-body">
+                    <h5 class="card-title"><?= name($jb); ?></h5>
+                    <p class="card-text"><?= description($jb); ?></p>
+                    <a href="./?view=job&id=<?= $jb->id ?>" class="btn btn-primary">Ver</a>
                 </div>
             </div>
-        </div>
+        <?php endforeach;
+        if (isEmpty($jobs)) : ?>
+            <p class="alert alert-warning">No hay vacantes de trabajo por el momento.</p>
+        <?php endif; ?>
     </div>
 </div>
