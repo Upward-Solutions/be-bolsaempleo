@@ -1,0 +1,65 @@
+@export $lightOrange;
+@export $orange;
+@export $darkOrange;
+@export $violet;
+@export $darkViolet;
+@export $lightViolet;
+@export $grey;
+@export $blue;
+@export $lightOrange;
+@export $orange;
+@export $darkOrange;
+@export $violet;
+@export $darkViolet;
+@export $lightViolet;
+@export $grey;
+@export $blue;
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 5vh;
+  background-color: #e46c1c;
+  padding: 5px 20px;
+}
+
+.layout-title {
+  color: white;
+  margin-right: 10px;
+}
+
+.layout-menu-item {
+  text-decoration: none;
+  color: #6e518a;
+}
+
+.layout-menu-item:hover,
+.layout-menu-item:visited,
+.layout-menu-item:active {
+  text-decoration: none;
+  color: #6e518a;
+}
+
+#content {
+  height: 90vh;
+}
+
+.layout-footer-text {
+  text-align: center;
+  color: #A7A7A7;
+}
+.layout-footer-text a {
+  text-decoration: none;
+  color: #2146BB;
+}
+.layout-footer-text a:hover, .layout-footer-text a :visited, .layout-footer-text a :active {
+  text-decoration: none;
+  color: #2146BB;
+}
+
+* {
+  margin: 0;
+}
+
+/*# sourceMappingURL=index.css.map */

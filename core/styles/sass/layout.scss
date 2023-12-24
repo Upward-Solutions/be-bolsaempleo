@@ -1,0 +1,47 @@
+@import "vars";
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 5vh;
+  background-color: $orange;
+  padding: 5px 20px;
+}
+
+.layout-title {
+  color: white;
+  margin-right: 10px;
+}
+
+.layout-menu-item {
+  text-decoration: none;
+  color: $lightViolet;
+}
+
+.layout-menu-item:hover,
+.layout-menu-item:visited,
+.layout-menu-item:active {
+  text-decoration: none;
+  color: $lightViolet;
+}
+
+#content {
+  height: 90vh;
+}
+
+.layout-footer-text {
+  text-align: center;
+  color: $grey;
+
+  & a {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover, :visited, :active {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}
