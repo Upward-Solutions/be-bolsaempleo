@@ -10,4 +10,3 @@ class Executor {
 		return array($con->query($sql),$con->insert_id);
 	}
 }
-?>
