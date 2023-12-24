@@ -1,4 +1,4 @@
-name: BE Bolsa de Empleo
+name: Staging
 
 on:
   push:
