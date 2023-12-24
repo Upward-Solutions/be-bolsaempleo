@@ -1,15 +1,12 @@
-<!--
-Este es el layout principal, a partir de este layout o plantilla se muestran el resto de "vistas"
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon">
-    <?= Html::title('Bolsa de Empleo - Bienestar Estudiantil'); ?>
-    <?= Html::link('res/bootstrap/css/bootstrap.css'); ?>
-    <?= Html::link('res/font-awesome/css/fontawesome-all.min.css'); ?>
-    <?= Html::script('res/js/jquery.min.js'); ?>
+    <title>Bolsa de Empleo - Bienestar Estudiantil</title>
+    <link href="../../../res/bootstrap/css/bootstrap.css" rel='stylesheet'>
+    <link href="../../../res/font-awesome/css/fontawesome-all.min.css" rel='stylesheet'>
+    <script src="../../../res/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -44,11 +41,14 @@ View::load("index");
         <div class="col-md-12">
             <br>
             <hr>
-            <p class="text-muted text-center">Realizado por <a href="https://www.psi.uba.ar/bienestar/index.php"
-                                                            target="_blank">Bienestar Estudiantil</a> &copy; 2023</p>
+            <p class="text-muted text-center">
+                Realizado por
+                <a href="https://www.psi.uba.ar/bienestar/index.php" target="_blank">Bienestar Estudiantil</a>
+                &copy; 2023
+            </p>
         </div>
     </div>
 </div>
-<?= Html::script('res/bootstrap/js/bootstrap.min.js'); ?>
+<script src="../../../res/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

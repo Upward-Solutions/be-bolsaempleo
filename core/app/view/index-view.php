@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="row">
+            <div class="row" style="height: 70vh">
                 <div class="col-md-6">
-                    <img src="LOGO BE_1.png" class="img-responsive" alt="logo">
+                    <img src="logo.png" class="img-responsive" alt="logo">
                 </div>
                 <div class="col-md-6">
                     <h2>Bienvenido a la Bolsa de Empleo</h2>
@@ -21,4 +21,3 @@
         </div>
     </div>
 </div>
-<br><br><br><br>
