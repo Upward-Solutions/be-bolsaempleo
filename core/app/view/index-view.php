@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="row" style="height: 70vh">
+            <div class="row">
                 <div class="col-md-6">
                     <img src="logo.png" class="img-responsive" alt="logo">
                 </div>
