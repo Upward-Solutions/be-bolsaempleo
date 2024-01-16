@@ -9,20 +9,20 @@
 }
 
 .layout-title {
-  color: white;
+  color: #583178;
   margin-right: 10px;
 }
 
 .layout-menu-item {
   text-decoration: none;
-  color: #6e518a;
+  color: white;
 }
 
 .layout-menu-item:hover,
 .layout-menu-item:visited,
 .layout-menu-item:active {
   text-decoration: none;
-  color: #6e518a;
+  color: white;
 }
 
 #content {
