@@ -6,7 +6,6 @@
         <title>Bolsa de Empleo - Bienestar Estudiantil</title>
         <link href="../../../core/styles/css/index.css" rel='stylesheet'>
         <link href="../../../core/styles/css/index.css.map" rel='stylesheet'>
-        <link href="../../../res/font-awesome/css/fontawesome-all.min.css" rel='stylesheet'>
     </head>
     <body>
         <nav class="navbar">
