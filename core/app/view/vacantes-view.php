@@ -39,11 +39,10 @@ function description($jb): string
 ?>
 
 <div class="container">
-    <h1>Vacantes</h1>
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between">
+    <h1 id="vacantes-title">Vacantes</h1>
+    <div id="vacantes-container">
         <?php foreach ($jobs as $jb) : ?>
-            <div class="card border-secondary"
-                 style="min-width: 200px; width: 200px; box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.30); padding: 10px">
+            <div class="vacante card border-secondary">
                 <div class="card-body">
                     <h5 class="card-title"><?= name($jb); ?></h5>
                     <p class="card-text"><?= description($jb); ?></p>

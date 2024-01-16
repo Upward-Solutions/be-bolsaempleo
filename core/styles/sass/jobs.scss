@@ -1,0 +1,19 @@
+@import "vars";
+
+#vacantes-title {
+  color: $darkViolet;
+}
+
+#vacantes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.vacante {
+  min-width: 200px;
+  width: 200px;
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.30);
+  padding: 10px;
+}
