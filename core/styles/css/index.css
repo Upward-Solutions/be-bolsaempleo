@@ -42,8 +42,13 @@
   color: #2146BB;
 }
 
+@media screen and (max-width: 1000px) {
+  #content {
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+}
 .index-container {
-  padding: 0 10vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -56,7 +61,8 @@
 }
 
 .index-text-container {
-  width: 450px;
+  width: 550px;
+  min-width: 450px;
 }
 .index-text-container h2 {
   color: #333333;
@@ -75,6 +81,12 @@
   color: #333333;
 }
 
+@media screen and (max-width: 1000px) {
+  .index-container {
+    align-items: flex-start;
+    height: fit-content;
+  }
+}
 * {
   margin: 0;
 }

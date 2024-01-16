@@ -45,3 +45,11 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1000px){
+  #content {
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+}
