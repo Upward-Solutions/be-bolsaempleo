@@ -1,33 +1,44 @@
 <?php
 $jb = JobData::getById($_GET["id"]);
 
-function getName(mixed $jb): void
+function isNullOrEmptyString($str): bool
 {
-    echo PlaceData::getById($jb->place_id)->name;
+    return ($str === null || trim($str) === '');
 }
 
-function getCategory(mixed $jb): void
+function getName(mixed $jb): string
 {
-    echo CategoryData::getById($jb->category_id)->name;
+    return PlaceData::getById($jb->place_id)->name;
+}
+
+function getCategory(mixed $jb): string
+{
+    return CategoryData::getById($jb->category_id)->name;
 }
 
 ?>
 
 <div class="job-container">
-    <h1><?php echo $jb->name; ?></h1>
+    <h1 class="job-title"><?php echo $jb->name; ?></h1>
     <div class="job-tags-container">
-        <div class="job-icon-container">
-            <i class="material-icons icon">place</i>
-            <p class="job-icon-text"><?php getName($jb); ?></p>
-        </div>
-        <div class="job-icon-container">
-            <i class="material-icons icon">local_offer</i>
-            <p class="job-icon-text"><?php getCategory($jb); ?></p>
-        </div>
-        <div class="job-icon-container">
-            <i class="material-icons icon">date_range</i>
-            <p class="job-icon-text">Disponible hasta: <?php echo $jb->limit_at; ?></p>
-        </div>
+        <?php if (!isNullOrEmptyString(getName($jb))) { ?>
+            <div class="job-icon-container">
+                <i class="material-icons icon">place</i>
+                <p class="job-icon-text"><?php echo getName($jb); ?></p>
+            </div>
+        <?php } ?>
+        <?php if (!isNullOrEmptyString(getCategory($jb))) { ?>
+            <div class="job-icon-container">
+                <i class="material-icons icon">local_offer</i>
+                <p class="job-icon-text"><?php echo getCategory($jb); ?></p>
+            </div>
+        <?php } ?>
+        <?php if (!isNullOrEmptyString($jb->limit_at)) { ?>
+            <div class="job-icon-container">
+                <i class="material-icons icon">date_range</i>
+                <p class="job-icon-text">Disponible hasta: <?php echo $jb->limit_at; ?></p>
+            </div>
+        <?php } ?>
     </div>
     <div class="job-description-container">
         <h4 class="job-subtitle">Descripcion</h4>

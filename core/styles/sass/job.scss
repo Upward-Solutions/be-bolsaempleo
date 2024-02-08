@@ -2,6 +2,10 @@
 
 .job-container {
   padding: 10px 20px;
+
+  .job-title {
+    color: $grey;
+  }
 }
 
 .job-tags-container {

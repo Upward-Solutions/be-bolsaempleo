@@ -108,6 +108,9 @@
 .job-container {
   padding: 10px 20px;
 }
+.job-container .job-title {
+  color: #333333;
+}
 
 .job-tags-container {
   display: flex;
