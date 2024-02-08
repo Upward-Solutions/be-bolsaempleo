@@ -31,27 +31,49 @@ function isEmpty(array $jobs): bool
     return count($jobs) == 0;
 }
 
-function description($jb): string
+function getCategory(mixed $jb): string
 {
-    return category($jb) . ' - ' . place($jb);
+    return CategoryData::getById($jb->category_id)->name;
+}
+
+
+function getPlaceName(mixed $jb): string
+{
+    return PlaceData::getById($jb->place_id)->name;
 }
 
 ?>
 
-<div class="container">
-    <h1 id="vacantes-title">Vacantes</h1>
-    <div id="vacantes-container">
-        <?php foreach ($jobs as $jb) : ?>
-            <div class="vacante card border-secondary">
-                <div class="card-body">
-                    <h5 class="card-title"><?= name($jb); ?></h5>
-                    <p class="card-text"><?= description($jb); ?></p>
-                    <a href="./?view=job&id=<?= $jb->id ?>" class="btn btn-primary">Ver</a>
+<div id="vacantes-container">
+    <?php foreach ($jobs as $jb) : ?>
+        <div class="vacante card border-secondary">
+            <div class="card-body">
+                <h2 class="card-title"><?= name($jb); ?></h2>
+                <div class="job-tags-container">
+                    <div class="job-icon-container">
+                        <i class="material-icons icon">local_offer</i>
+                        <p class="job-icon-text"><?php echo getCategory($jb); ?></p>
+                    </div>
+                    <div class="job-icon-container">
+                        <i class="material-icons icon">place</i>
+                        <p class="job-icon-text"><?php echo getPlaceName($jb); ?></p>
+                    </div>
                 </div>
+                <p class="card-text job-description"><?php echo $jb->description; ?></p>
+                <a href="./?view=job&id=<?= $jb->id ?>" class="ver-button">
+                    <i class="material-icons icon">search</i>
+                </a>
             </div>
-        <?php endforeach;
-        if (isEmpty($jobs)) : ?>
-            <p class="alert alert-warning">No hay vacantes de trabajo por el momento.</p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endforeach;
+    if (isEmpty($jobs)) : ?>
+        <p class="alert alert-warning">No hay vacantes de trabajo por el momento.</p>
+    <?php endif; ?>
 </div>
+
+<script type="text/javascript">
+    const descriptions = document.getElementsByClassName("job-description")
+    for (const description of descriptions) {
+        description.textContent = description.textContent.slice(0, 50) + '...';
+    }
+</script>

@@ -95,14 +95,33 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 20px;
   justify-content: space-between;
 }
 
 .vacante {
+  position: relative;
   min-width: 200px;
   width: 200px;
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.ver-button {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  text-align: right;
+  color: #583178;
+}
+.ver-button:active, .ver-button:visited {
+  color: #583178;
 }
 
 .job-container {

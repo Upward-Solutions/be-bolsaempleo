@@ -6,7 +6,7 @@ function isNullOrEmptyString($str): bool
     return ($str === null || trim($str) === '');
 }
 
-function getName(mixed $jb): string
+function getPlaceName(mixed $jb): string
 {
     return PlaceData::getById($jb->place_id)->name;
 }
@@ -21,10 +21,10 @@ function getCategory(mixed $jb): string
 <div class="job-container">
     <h1 class="job-title"><?php echo $jb->name; ?></h1>
     <div class="job-tags-container">
-        <?php if (!isNullOrEmptyString(getName($jb))) { ?>
+        <?php if (!isNullOrEmptyString(getPlaceName($jb))) { ?>
             <div class="job-icon-container">
                 <i class="material-icons icon">place</i>
-                <p class="job-icon-text"><?php echo getName($jb); ?></p>
+                <p class="job-icon-text"><?php echo getPlaceName($jb); ?></p>
             </div>
         <?php } ?>
         <?php if (!isNullOrEmptyString(getCategory($jb))) { ?>
@@ -73,7 +73,7 @@ function getCategory(mixed $jb): string
                     <label for="cv">Adjuntar CV en PDF</label>
                     <input type="file" name="file" id="cv" required>
                 </div>
-                <label><input type="checkbox" name="accept" required> Acepto los términos y condiciones</label>
+                <label><input type="checkbox" name="accept" required> Acepto los t&eacute;rminos y condiciones</label>
                 <button type="submit" class="job-apply-button" id="postularme-open-button">ENVIAR</button>
             </form>
         </div>
