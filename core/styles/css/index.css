@@ -110,6 +110,7 @@
 }
 .job-container .job-title {
   color: #333333;
+  margin-bottom: 10px;
 }
 
 .job-tags-container {
@@ -146,9 +147,39 @@
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 30px;
+  display: block;
 }
 .job-apply-button:hover {
   color: white;
+}
+
+dialog {
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+}
+dialog #close-modal-button {
+  cursor: pointer;
+  margin-left: 80vw;
+}
+dialog .form-group {
+  display: flex;
+  max-width: 500px;
+  gap: 2px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+dialog .form-group input {
+  padding: 5px 0;
+  text-indent: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: solid 0.5px #583178;
+}
+dialog input[type=checkbox] {
+  accent-color: #583178;
+  border: none;
 }
 
 * {

@@ -46,45 +46,47 @@ function getCategory(mixed $jb): string
         <h4 class="job-subtitle">Requerimientos</h4>
         <p class="job-description-text"><?php echo $jb->requirements; ?></p>
     </div>
-    <button class="job-apply-button">POSTULARME</button>
-    <?php /*
-            <div class="panel panel-default">
-                <div class="panel-heading">Enviar informacion</div>
-                <div class="panel-body">
-                    <form method="post" action="./?action=send" enctype="multipart/form-data">
-                        <input type="hidden" name="job_id" value="<?php echo $jb->id; ?>">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nombre</label>
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                   placeholder="Nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Apellidos</label>
-                            <input type="text" name="lastname" class="form-control" id="exampleInputEmail1"
-                                   placeholder="Apellidos" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Telefono</label>
-                            <input type="text" name="phone" required class="form-control" id="exampleInputEmail1"
-                                   placeholder="Telefono">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Correo electronico</label>
-                            <input type="email" name="email" required class="form-control" id="exampleInputEmail1"
-                                   placeholder="Correo electronico">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">Adjuntar CV en PDF</label>
-                            <input type="file" name="file" id="exampleInputFile" required>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="accept" required> Acepto los terminos y condiciones
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Enviar datos</button>
-                    </form>
+    <button class="job-apply-button" id="postularme-open-button">POSTULARME</button>
+    <dialog id="postularme-modal">
+        <i class="material-icons" id="close-modal-button">close</i>
+        <div class="panel panel-default">
+            <h2 class="job-title">Enviar informacion</h2>
+            <form method="post" action="./?action=send" enctype="multipart/form-data">
+                <input type="hidden" name="job_id" value="<?php echo $jb->id; ?>">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
                 </div>
-            </div>
-        */ ?>
+                <div class="form-group">
+                    <label for="last-name">Apellidos</label>
+                    <input type="text" name="lastname" id="last-name" placeholder="Apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input type="text" name="phone" required id="phone" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" name="email" required id="email" placeholder="Correo electronico">
+                </div>
+                <div class="form-group">
+                    <label for="cv">Adjuntar CV en PDF</label>
+                    <input type="file" name="file" id="cv" required>
+                </div>
+                <label><input type="checkbox" name="accept" required> Acepto los términos y condiciones</label>
+                <button type="submit" class="job-apply-button" id="postularme-open-button">ENVIAR</button>
+            </form>
+        </div>
+    </dialog>
+    <script type="text/javascript">
+        const modal = document.getElementById('postularme-modal')
+        const openButton = document.getElementById('postularme-open-button')
+        const closeButton = document.getElementById('close-modal-button')
+        openButton.addEventListener('click', function () {
+            modal.showModal()
+        })
+        closeButton.addEventListener('click', function () {
+            modal.close()
+        })
+    </script>
 </div>

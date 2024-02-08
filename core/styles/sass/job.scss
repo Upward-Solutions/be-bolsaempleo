@@ -5,6 +5,7 @@
 
   .job-title {
     color: $grey;
+    margin-bottom: 10px;
   }
 }
 
@@ -48,8 +49,42 @@
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 30px;
+  display: block;
 
   &:hover {
     color: white;
+  }
+}
+
+dialog {
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+
+  #close-modal-button {
+    cursor: pointer;
+    margin-left: 80vw;
+  }
+
+  .form-group {
+    display: flex;
+    max-width: 500px;
+    gap: 2px;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    input {
+      padding: 5px 0;
+      text-indent: 10px;
+      outline: none;
+      border-radius: 5px;
+      border: solid .5px $darkViolet;
+    }
+  }
+
+  input[type="checkbox"] {
+    accent-color: $darkViolet;
+    border: none;
   }
 }
