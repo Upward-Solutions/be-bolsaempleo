@@ -1,0 +1,51 @@
+@import "vars";
+
+.job-container {
+  padding: 10px 20px;
+}
+
+.job-tags-container {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 30px;
+
+  .job-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .icon {
+    color: $darkViolet;
+  }
+
+  .job-icon-text {
+    color: $lowGrey;
+  }
+}
+
+.job-description-container {
+  .job-subtitle {
+    color: $grey;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .job-description-text {
+    color: $grey;
+  }
+}
+
+.job-apply-button {
+  margin-top: 20px;
+  background-color: $darkViolet;
+  color: $lowGrey;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 30px;
+
+  &:hover {
+    color: white;
+  }
+}

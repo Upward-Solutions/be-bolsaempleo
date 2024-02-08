@@ -105,6 +105,49 @@
   padding: 10px;
 }
 
+.job-container {
+  padding: 10px 20px;
+}
+
+.job-tags-container {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 30px;
+}
+.job-tags-container .job-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.job-tags-container .icon {
+  color: #583178;
+}
+.job-tags-container .job-icon-text {
+  color: #9E9C9C;
+}
+
+.job-description-container .job-subtitle {
+  color: #333333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.job-description-container .job-description-text {
+  color: #333333;
+}
+
+.job-apply-button {
+  margin-top: 20px;
+  background-color: #583178;
+  color: #9E9C9C;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 30px;
+}
+.job-apply-button:hover {
+  color: white;
+}
+
 * {
   margin: 0;
 }

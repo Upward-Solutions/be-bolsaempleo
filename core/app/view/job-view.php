@@ -1,26 +1,42 @@
 <?php
 $jb = JobData::getById($_GET["id"]);
+
+function getName(mixed $jb): void
+{
+    echo PlaceData::getById($jb->place_id)->name;
+}
+
+function getCategory(mixed $jb): void
+{
+    echo CategoryData::getById($jb->category_id)->name;
+}
+
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1><?php echo $jb->name; ?></h1>
-            <div class="panel panel-default">
-                <div class="panel-heading">Informacion del Trabajo</div>
-                <div class="panel-body">
-                    <label>Descripcion</label>
-                    <p><?php echo $jb->description; ?></p>
-                    <label>Requerimientos</label>
-                    <p><?php echo $jb->requirements; ?></p>
-                    <label>Fecha limite</label>
-                    <p><?php echo $jb->limit_at; ?></p>
-                    <label>Categoria</label>
-                    <p><?php echo CategoryData::getById($jb->category_id)->name; ?></p>
-                    <label>Lugar</label>
-                    <p><?php echo PlaceData::getById($jb->place_id)->name; ?></p>
-                </div>
-            </div>
+<div class="job-container">
+    <h1><?php echo $jb->name; ?></h1>
+    <div class="job-tags-container">
+        <div class="job-icon-container">
+            <i class="material-icons icon">place</i>
+            <p class="job-icon-text"><?php getName($jb); ?></p>
+        </div>
+        <div class="job-icon-container">
+            <i class="material-icons icon">local_offer</i>
+            <p class="job-icon-text"><?php getCategory($jb); ?></p>
+        </div>
+        <div class="job-icon-container">
+            <i class="material-icons icon">date_range</i>
+            <p class="job-icon-text">Disponible hasta: <?php echo $jb->limit_at; ?></p>
+        </div>
+    </div>
+    <div class="job-description-container">
+        <h4 class="job-subtitle">Descripcion</h4>
+        <p class="job-description-text"><?php echo $jb->description; ?></p>
+        <h4 class="job-subtitle">Requerimientos</h4>
+        <p class="job-description-text"><?php echo $jb->requirements; ?></p>
+    </div>
+    <button class="job-apply-button">POSTULARME</button>
+    <?php /*
             <div class="panel panel-default">
                 <div class="panel-heading">Enviar informacion</div>
                 <div class="panel-body">
@@ -59,7 +75,5 @@ $jb = JobData::getById($_GET["id"]);
                     </form>
                 </div>
             </div>
-
-        </div>
-    </div>
+        */ ?>
 </div>
