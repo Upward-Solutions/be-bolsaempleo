@@ -13,3 +13,4 @@
 [] Que se pueda editar una categoría
 [] Test de flujo e2e
 [] UTF-8 en la base de datos
+[] Agregar CDN con dominio
