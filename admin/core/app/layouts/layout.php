@@ -4,15 +4,6 @@ function hayUsuarioAutenticado(): bool
     return isset($_SESSION["user_id"]);
 }
 
-function obtenerClase(): string
-{
-    if (hayUsuarioAutenticado()) {
-        return "skin-blue-light sidebar-mini";
-    } else {
-        return "login-page";
-    }
-}
-
 function userName(): string
 {
     return UserData::getById($_SESSION["user_id"])->name;
@@ -51,7 +42,7 @@ function userName(): string
     <script src='plugins/select2/select2.min.js'></script>
 </head>
 
-<body class="<?php echo obtenerClase() ?>">
+<body class="skin-blue-light sidebar-mini">
     <?php if (hayUsuarioAutenticado()): ?>
         <header class="main-header">
             <!-- Logo -->
