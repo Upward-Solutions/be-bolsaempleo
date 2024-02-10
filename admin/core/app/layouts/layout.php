@@ -87,35 +87,18 @@ function userName(): string
             </nav>
         </header>
         <aside class="main-sidebar">
-            <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <ul class="sidebar-menu">
                     <li class="header">ADMINISTRACION</li>
                     <?php $u = UserData::getById($_SESSION["user_id"]); ?>
                     <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
-                    <li><a href="./index.php?view=persons"><i class='fa fa-file-text'></i> <span>Solicitudes</span></a>
-                    </li>
-                    <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Vacantes</span></a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-th-list"></i>
-                            <span>Catalogos</span>
-                            <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="./?view=places&opt=all"><i class="fa fa-circle-o"></i> Lugares</a></li>
-                            <li><a href="./?view=categories&opt=all"><i class="fa fa-circle-o"></i> Categorias</a>
-                            </li>
-                        </ul>
-                    </li>
-
+                    <li><a href="./index.php?view=persons"><i class='fa fa-file-text'></i> <span>Solicitudes</span></a></li>
+                    <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Vacantes</span></a></li>
+                    <li><a href="./?view=places&opt=all"><i class="fa fa-map-marker"></i>Lugares</a></li>
+                    <li><a href="./?view=categories&opt=all"><i class="fa fa-tags"></i>Categorias</a></li>
                     <li><a href="./?view=users"><i class='fa fa-user'></i> <span>Usuarios</span></a></li>
-                </ul><!-- /.sidebar-menu -->
+                </ul>
             </section>
-            <!-- /.sidebar -->
         </aside>
         <div class="content-wrapper">
             <?php View::load("index"); ?>
