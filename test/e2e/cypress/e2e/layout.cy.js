@@ -39,5 +39,5 @@ describe('Layout test', () => {
         cy.visit(URL_BASE)
     })
 
-    const URL_BASE = 'http://localhost:8080'
+    const URL_BASE = 'http://app:8080'
 })
