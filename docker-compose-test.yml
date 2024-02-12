@@ -5,7 +5,7 @@ services:
     image: mysql:8.2.0
     container_name: mysql
     networks:
-      - be-bolsadetrabajo-network
+      - be-bolsadetrabajo-network-test
     environment:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: be-bolsadetrabajo-db
@@ -20,7 +20,7 @@ services:
   app:
     container_name: php_app
     networks:
-      - be-bolsadetrabajo-network
+      - be-bolsadetrabajo-network-test
     build:
       context: .
       dockerfile: Dockerfile
@@ -37,16 +37,15 @@ services:
   cypress:
     container_name: cypress
     build:
-      context: .
+      context: ./test/e2e/
       dockerfile: Dockerfile-cypress
     working_dir: /app
     networks:
-      - be-bolsadetrabajo-network
+      - be-bolsadetrabajo-network-test
     volumes:
       - ./test/e2e:/app
     depends_on:
       - app
 
-
 networks:
-  be-bolsadetrabajo-network:
+  be-bolsadetrabajo-network-test:
