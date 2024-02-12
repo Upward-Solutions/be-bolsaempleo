@@ -10,8 +10,7 @@
     </head>
     <body>
         <nav class="navbar">
-            <h2 class="layout-title">Bienestar Estudiantil</h2>
-            <a class="layout-menu-item" href="./">Inicio</a>
+            <a class="layout-menu-item" href="./"><h2 class="layout-title">Bienestar Estudiantil</h2></a>
             <a class="layout-menu-item" href="./?view=vacantes">Vacantes</a>
         </nav>
         <div id="content">
@@ -20,7 +19,7 @@
         <p class="layout-footer-text">
             Realizado por
             <a href="https://www.psi.uba.ar/bienestar/index.php" target="_blank">Bienestar Estudiantil</a>
-            &copy; 2023
+            &copy; 2024
         </p>
     </body>
 </html>
