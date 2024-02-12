@@ -46,7 +46,6 @@ services:
       - ./test/e2e:/app
     depends_on:
       - app
-    command: "npm run cy:run"
 
 
 networks:

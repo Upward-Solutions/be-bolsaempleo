@@ -2,6 +2,7 @@ FROM node:latest
 
 WORKDIR /usr/src/app
 
+COPY test/e2e/package.json ./
 COPY test/e2e/package*.json ./
 
 RUN npm install
@@ -19,3 +20,5 @@ RUN apt-get update && apt-get install -y \
     libxtst6 \
     xauth \
     xvfb
+
+RUN npm run cy:run
