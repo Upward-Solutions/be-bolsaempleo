@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Módulo de pruebas e2e para el proyecto Bolsa de Empleo de la Subsecretaría de Bienestar Estudiantil de la Facultad de Psicología de la UBA",
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run"
+  },
+  "dependencies": {
+    "cypress": "^13.6.4"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cypress": "^13.6.4"
-  }
+  "license": "ISC"
 }
