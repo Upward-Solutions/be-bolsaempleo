@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.github/workflows/staging.yml'
 
 jobs:
   test-e2e:
