@@ -1,7 +1,7 @@
 <section class="content">
 <div class="row">
 	<div class="col-md-12">
-		<h1>Categorias</h1>
+		<h1>Categor&iacute;as</h1>
 
 
 <!-- Button trigger modal -->
