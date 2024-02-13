@@ -32,23 +32,26 @@ describe('Categorias', () => {
         cy.get('#DataTables_Table_0 tr').should('not.contain', nuevaCategoria);
     });
 
-    it.skip('Editar una categoria', () => {
-        let nuevaCategoria = "Salud";
+   it.skip('Editar una categoria', () => {
+       let nuevaCategoria = "Nueva Categoría";
         cy.login('admin', 'admin')
         irACategorias()
         abrirModalNuevaCategoria();
         crearNuevaCategoria(nuevaCategoria);
-        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-danger').click();
-    });
 
+        abrirModalEditarCategoria(nuevaCategoria)
+
+        cy.get('#editName').type('Nuevo nombre', {force: true})
+
+        eliminarCategoria(nuevaCategoria)
+    });
 
     function abrirModalNuevaCategoria() {
         cy.get('.col-md-12 > .btn-default').click()
     }
 
     function irACategorias() {
-        cy.get(':nth-child(6) > a').click()
-
+        cy.goToSection("categories")
     }
 
     function crearNuevaCategoria(name) {
@@ -57,6 +60,10 @@ describe('Categorias', () => {
     }
 
     function eliminarCategoria(name) {
+        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-danger').click();
+    }
+
+    function abrirModalEditarCategoria(name) {
         cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-warning').click();
     }
 })
