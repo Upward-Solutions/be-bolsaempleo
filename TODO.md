@@ -13,6 +13,7 @@
 [] UTF-8 en la base de datos
 
 # Test
+
 [x] Test de flujo e2e - layout
 [] Test de flujo e2e - vista index
 [] Test de flujo e2e - vista vacantes
@@ -25,3 +26,7 @@
 [] Agregar CDN con dominio
 [] Ejecutar test e2e en el pipeline
 [x] Configuración de la infraestructura del file system
+
+# Arquitectura
+
+[] Separar más claramente las capas de View - Domain - Repository
