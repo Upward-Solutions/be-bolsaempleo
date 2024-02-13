@@ -41,7 +41,7 @@ function getCategory(mixed $jb): string
         <?php } ?>
     </div>
     <div class="job-description-container">
-        <h4 class="job-subtitle">Descripcion</h4>
+        <h4 class="job-subtitle">Descripci&oacute;n</h4>
         <p class="job-description-text"><?php echo $jb->description; ?></p>
         <h4 class="job-subtitle">Requerimientos</h4>
         <p class="job-description-text"><?php echo $jb->requirements; ?></p>
@@ -50,7 +50,7 @@ function getCategory(mixed $jb): string
     <dialog id="postularme-modal">
         <i class="material-icons" id="close-modal-button">close</i>
         <div class="panel panel-default">
-            <h2 class="job-title">Enviar informacion</h2>
+            <h2 class="job-title">Enviar informaci&oacute;n</h2>
             <form method="post" action="./?action=send" enctype="multipart/form-data">
                 <input type="hidden" name="job_id" value="<?php echo $jb->id; ?>">
                 <div class="form-group">
