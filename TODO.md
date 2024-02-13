@@ -17,6 +17,7 @@
 [] Test de flujo e2e - vista index
 [] Test de flujo e2e - vista vacantes
 [] Test para admin
+[] Test unitarios PHP
 
 # Infraestructura
 
