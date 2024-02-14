@@ -45,6 +45,8 @@ services:
       context: ./test/e2e/
       dockerfile: Dockerfile-cypress
     working_dir: /app
+    environment:
+      CYPRESS_BASE_URL: http://app
     networks:
       - be-bolsadetrabajo-network-test
     volumes:
