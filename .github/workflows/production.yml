@@ -31,14 +31,14 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Log in to registry
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
         registry: https://bolsaempleouba.azurecr.io/
         username: ${{ secrets.AzureAppService_ContainerUsername_4929bc3745254abb9a308f771c6c5c32 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_af512f8b3ff249ae80a21fc376c1e047 }}
 
     - name: Build and push container image to registry
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v5
       with:
         push: true
         tags: bolsaempleouba.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_4929bc3745254abb9a308f771c6c5c32 }}/be-bolsa-empleo:${{ github.sha }}
