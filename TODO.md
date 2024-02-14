@@ -15,6 +15,7 @@
 # Test
 
 [x] Test de flujo e2e - layout
+[x] Test de flujo e2e - login
 [] Test de flujo e2e - vista index
 [] Test de flujo e2e - vista vacantes
 [] Test para admin
@@ -22,10 +23,10 @@
 
 # Infraestructura
 
-[] Warnings del pipeline
 [] Agregar CDN con dominio
-[] Ejecutar test e2e en el pipeline
-[x] Configuración de la infraestructura del file system
+[] Configuración de la infraestructura del file system
+[X] Warnings del pipeline
+[X] Ejecutar test e2e en el pipeline
 
 # Arquitectura
 
