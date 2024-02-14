@@ -1,57 +1,41 @@
 describe('Categorias', () => {
-    it('Se visualizan las categorias correctamente', () => {
-        cy.login('admin', 'admin')
+    it('CREATE - Crear nueva categoria', () => {
+        crearCategoria(nuevaCategoria)
 
-        irACategorias()
+        cy.get('#DataTables_Table_0 tr').should('contain', nuevaCategoria)
+        eliminarCategoria(nuevaCategoria)
+    })
 
+    it('READ - Se visualizan las categorias correctamente', () => {
         cy.get('h1').should('contain', 'Categorías')
     })
 
-
-    it('Crear nueva categoria', () => {
-        let nuevaCategoria = "Nueva Categoría";
-        cy.login('admin', 'admin')
-        irACategorias()
-        abrirModalNuevaCategoria();
-
-        crearNuevaCategoria(nuevaCategoria);
-
-        cy.get('#DataTables_Table_0 tr').should('contain', nuevaCategoria);
-        eliminarCategoria(nuevaCategoria);
-    });
-
-    it('Eliminar una categoria', () => {
-        let nuevaCategoria = "Nueva Categoría";
-        cy.login('admin', 'admin')
-        irACategorias()
-        abrirModalNuevaCategoria();
-        crearNuevaCategoria(nuevaCategoria);
-
-        eliminarCategoria(nuevaCategoria);
-
-        cy.get('#DataTables_Table_0 tr').should('not.contain', nuevaCategoria);
-    });
-
-   it.skip('Editar una categoria', () => {
-       let nuevaCategoria = "Nueva Categoría";
-        cy.login('admin', 'admin')
-        irACategorias()
-        abrirModalNuevaCategoria();
-        crearNuevaCategoria(nuevaCategoria);
-
+    it('UPDATE - Editar una categoria', () => {
+        crearCategoria(nuevaCategoria)
         abrirModalEditarCategoria(nuevaCategoria)
+        editarCategoria();
 
-        cy.get('#editName').type('Nuevo nombre', {force: true})
+        eliminarCategoria(nuevoValor)
+    })
+
+    it('DELETE - Eliminar una categoria', () => {
+        crearCategoria(nuevaCategoria)
 
         eliminarCategoria(nuevaCategoria)
-    });
+
+        cy.get('#DataTables_Table_0 tr').should('not.contain', nuevaCategoria)
+    })
+
+    beforeEach(() => {
+        cy.login('admin', 'admin')
+        cy.goToSection("categories")
+    })
+
+    const nuevaCategoria = "Nueva Categoría"
+    const nuevoValor = 'Nuevo valor'
 
     function abrirModalNuevaCategoria() {
         cy.get('.col-md-12 > .btn-default').click()
-    }
-
-    function irACategorias() {
-        cy.goToSection("categories")
     }
 
     function crearNuevaCategoria(name) {
@@ -60,11 +44,21 @@ describe('Categorias', () => {
     }
 
     function eliminarCategoria(name) {
-        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-danger').click();
+        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-danger').click()
     }
 
     function abrirModalEditarCategoria(name) {
-        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-warning').click();
+        cy.get('#DataTables_Table_0 tr:contains("' + name + '")').find('.btn-warning').click()
+    }
+
+    function crearCategoria(nuevaCategoria) {
+        abrirModalNuevaCategoria()
+        crearNuevaCategoria(nuevaCategoria)
+    }
+
+    function editarCategoria() {
+        cy.get('#editModal').find('#newName').clear().type(nuevoValor)
+        cy.get('#editModal').find('.btn').click()
     }
 })
 
