@@ -25,7 +25,7 @@ function createPerson(FileData $fileData): PersonData
     $person->lastname = $_POST["lastname"];
     $person->phone = $_POST["phone"];
     $person->email = $_POST["email"];
-    $person->file = $fileData->name;
+    $person->file = $fileData->id;
     $person->job_id = $_POST["job_id"];
     return $person;
 }

@@ -31,6 +31,7 @@ services:
       DB_NAME: be-bolsadetrabajo-db
       DB_PORT: 3306
       DEBUG: 1
+      ENVIRONMENT: dev
     ports:
       - "8080:80"
     volumes:

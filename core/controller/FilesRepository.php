@@ -3,12 +3,24 @@
 class FilesRepository
 {
     private string $uploadDirectory;
+    private string $environment;
 
-    public function __construct($uploadDirectory) {
+    public function __construct($uploadDirectory)
+    {
+        $this->environment = getenv('ENVIRONMENT');
         $this->uploadDirectory = $uploadDirectory;
     }
 
     public function uploadFile(FileData $fileData): string
+    {
+        if ($this->environment == Environments::DEVELOPMENT) {
+            return $this->uploadToLocal($fileData);
+        } else {
+            return $this->uploadToAzure($fileData);
+        }
+    }
+
+    private function uploadToLocal($fileData): string
     {
         $fileName = $fileData->name;
         $fileTmpName = $_FILES['file']['tmp_name'];
@@ -18,5 +30,10 @@ class FilesRepository
         } else {
             return "Error al subir el archivo.";
         }
+    }
+
+    private function uploadToAzure($fileData): string
+    {
+        return "azure";
     }
 }
