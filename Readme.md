@@ -1,7 +1,7 @@
 # Setup - primera vez
 1. Dar permisos al archivo (Solo para usuarios linux)
     ```bash
-        sudo chmod +x crear_carpeta.sh
+        sudo chmod +x setup.sh
     ```
 2. Ejecutar archivo
     ```bash
