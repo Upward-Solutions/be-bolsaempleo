@@ -36,8 +36,6 @@ describe('Layout test', () => {
     })
 
     beforeEach(() => {
-        cy.visit(URL_BASE)
+        cy.visit('/')
     })
-
-    const URL_BASE = 'http://localhost:8080'
 })

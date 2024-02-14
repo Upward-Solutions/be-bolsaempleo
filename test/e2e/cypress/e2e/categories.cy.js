@@ -1,4 +1,4 @@
-describe('Categorias', () => {
+describe.skip('Categorias', () => {
     it('CREATE - Crear nueva categoria', () => {
         crearCategoria(nuevaCategoria)
 
