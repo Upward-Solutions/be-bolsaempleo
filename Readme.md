@@ -1,3 +1,13 @@
+# Setup - primera vez
+1. Dar permisos al archivo 
+    ```bash
+        sudo chmod +x crear_carpeta.sh
+    ```
+2. Ejecutar archivo
+    ```bash
+        ./stup.sh
+    ```
+
 # Levantar localmente la aplicación
 
 ## Prerrequisitos
