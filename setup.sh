@@ -38,7 +38,7 @@ echo
 
 echo '3) Asignando permisos a la carpeta ./uploads'
 if [[ "$(uname)" != "Darwin" ]]; then
-    chmod -R 777 "$carpeta"
+    chmod -R 0777 "$carpeta"
 fi
 ((current_step++))
 print_progress

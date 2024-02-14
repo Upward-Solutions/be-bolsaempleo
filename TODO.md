@@ -8,7 +8,13 @@
 
 ## Funcionales
 
-[] Adaptar código de php para el file system de azure
++ Adaptar código de php para el file system de azure
+  - Upload de archivos
+    [x] Que funcione localmente
+    [] Validaciones de las características del file
+    [] Validaciones del formulario
+  - Download de archivos
+    [] Que funcione localmente
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
 
