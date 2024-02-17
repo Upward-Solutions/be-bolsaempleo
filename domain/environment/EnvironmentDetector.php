@@ -1,6 +1,6 @@
 <?php
 
-namespace environment;
+namespace domain\environment;
 
 class EnvironmentDetector
 {

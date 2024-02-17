@@ -1,6 +1,6 @@
 <?php
 
-namespace files;
+namespace domain\files;
 
 class FileData
 {
