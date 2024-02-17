@@ -1,4 +1,6 @@
 <?php
+use domain\files\storage\StorageConnection;
+use domain\files\FileData;
 
 if (isset($_POST["accept"])) {
     $fileData = uploadFile();
@@ -12,9 +14,10 @@ Core::redir("./?view=job&id=$_POST[job_id]");
 
 function uploadFile(): FileData
 {
+    $storageConnection = new StorageConnection();
+    $storage = $storageConnection->storage();
     $fileData = new FileData($_FILES['file']['id'], $_FILES['file']['name']);
-    $filesRepository = new FilesRepository('/var/www/html/uploads/');
-    $filesRepository->uploadFile($fileData);
+    $storage->save($fileData);
     return $fileData;
 }
 
