@@ -4,6 +4,6 @@ namespace domain\files;
 
 interface Files
 {
-    public function save(FileData $file): bool;
+    public function save(FileData $fileData): bool;
     public function read(string $fileId): FileData;
 }
