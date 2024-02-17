@@ -12,5 +12,5 @@ include "controller/Action.php";
 include "controller/class.upload.php";
 include "controller/Form.php";
 include "controller/Crudadmin.php";
-include "controller/FilesRepository.php";
-include "domain/FileData.php";
+include "vendor/autoload.php";
+include "domain/autoload.php";
