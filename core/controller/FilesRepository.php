@@ -13,7 +13,7 @@ class FilesRepository
 
     public function uploadFile(FileData $fileData): string
     {
-        if ($this->environment == Environments::DEVELOPMENT) {
+        if ($this->environment == "dev") {
             return $this->uploadToLocal($fileData);
         } else {
             return $this->uploadToAzure($fileData);
