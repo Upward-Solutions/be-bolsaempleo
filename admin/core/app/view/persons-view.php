@@ -46,19 +46,19 @@ function getStatus($user): string
                                     <td><?php echo PlaceData::getById($job->place_id)->name; ?></td>
                                     <td><?php echo getStatus($user)?></td>
                                     <td><?php echo $user->created_at; ?></td>
-                                    <td style="width:180px;">
+                                    <td style="">
                                         <a
                                                 href="index.php?action=download&file_id=<?php echo $user->file; ?>"
-                                                class="btn btn-danger btn-xs"
+                                                class="btn btn-primary btn-xs"
                                                 target="_blank"
                                         >
                                             Ver CV
                                         </a>
                                         <?php if ($user->status == 1): ?>
                                             <a href="index.php?action=persons&opt=accept&id=<?php echo $user->id; ?>"
-                                               class="btn btn-info btn-xs">Aceptar</a>
+                                               class="btn btn-success btn-xs">Aceptar</a>
                                             <a href="index.php?action=persons&opt=denied&id=<?php echo $user->id; ?>"
-                                               class="btn btn-danger btn-xs">Rechazar</a>
+                                               class="btn btn-warning btn-xs">Rechazar</a>
                                         <?php endif; ?>
 
                                         <a href="index.php?action=persons&opt=del&id=<?php echo $user->id; ?>"
