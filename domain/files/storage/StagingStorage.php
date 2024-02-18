@@ -28,12 +28,13 @@ class StagingStorage implements Files
     public function save(FileData $fileData): bool
     {
         try {
+            Core::alert("Llegó hasta acá");
             $this->storageClient->createBlockBlob($this->containerName, $fileData->name, $fileData->content);
             return true;
         } catch (ServiceException $e) {
             $code = $e->getCode();
             $error_message = $e->getMessage();
-            echo $code.": ".$error_message.PHP_EOL;
+            Core::alert($code. ":" .$error_message.PHP_EOL);
             return false;
         }
     }
