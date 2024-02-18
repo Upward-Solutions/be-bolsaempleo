@@ -19,9 +19,6 @@ class StorageConnection
     public function storage(): ?Files
     {
         $environmentDetector = new EnvironmentDetector();
-        if (!$environmentDetector->isProd()) {
-            echo "<script>alert('" . $this->storageUrl . "');</script>";
-        }
         if ($environmentDetector->isDev()) {
             return new LocalStorage($this->storageUrl, $this->containerName);
         }

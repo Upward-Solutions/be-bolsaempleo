@@ -28,7 +28,9 @@ class StagingStorage implements Files
     public function save(FileData $fileData): bool
     {
         try {
-            $this->storageClient->createBlockBlob($this->containerName, $fileData->name, $fileData->content);
+            echo "<script>alert('A punto de enviar el archivo');</script>";
+            $result = $this->storageClient->createBlockBlob($this->containerName, $fileData->name, $fileData->content);
+            echo "<script>alert('" . print_r($result, true) . "');</script>";
             return true;
         } catch (ServiceException $e) {
             $code = $e->getCode();
