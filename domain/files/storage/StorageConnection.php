@@ -20,7 +20,7 @@ class StorageConnection
     {
         $environmentDetector = new EnvironmentDetector();
         if (!$environmentDetector->isProd()) {
-            Core::alert($this->storageUrl);
+            echo "<script>alert('" . $this->storageUrl . "');</script>";
         }
         if ($environmentDetector->isDev()) {
             return new LocalStorage($this->storageUrl, $this->containerName);
