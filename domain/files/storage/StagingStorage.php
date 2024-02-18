@@ -28,7 +28,7 @@ class StagingStorage implements Files
     public function save(FileData $fileData): bool
     {
         try {
-            Core::alert("Llegó hasta acá");
+            echo '<scritp>console.log('. "Llegó hasta acá" . ')</scritp>';
             $this->storageClient->createBlockBlob($this->containerName, $fileData->name, $fileData->content);
             return true;
         } catch (ServiceException $e) {

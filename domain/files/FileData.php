@@ -15,5 +15,8 @@ class FileData
         $this->content = $content;
     }
 
-
+    public function __toString(): string
+    {
+        return 'FileData: name ' . $this->name . ', content ' . $this->content;
+    }
 }
