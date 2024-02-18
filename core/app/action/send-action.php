@@ -14,9 +14,12 @@ Core::redir("./?view=job&id=$_POST[job_id]");
 
 function uploadFile(): FileData
 {
+    $file = $_FILES['file'];
+    $fileTmpPath = $file['tmp_name'];
+    $fileContent = file_get_contents($fileTmpPath);
     $storageConnection = new StorageConnection();
     $storage = $storageConnection->storage();
-    $fileData = new FileData($_FILES['file']['id'], $_FILES['file']['name']);
+    $fileData = new FileData($file['id'], $file['name'], $fileContent);
     $storage->save($fileData);
     return $fileData;
 }
