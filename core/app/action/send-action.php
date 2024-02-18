@@ -20,7 +20,8 @@ function uploadFile(): FileData
     $storageConnection = new StorageConnection();
     $storage = $storageConnection->storage();
     $fileData = new FileData(uniqid(), $_FILES['file']['name'], $fileContent);
-    $storage->save($fileData);
+    $result = $storage->save($fileData);
+    echo "<script>alert('El resultado de la subida fue:'" . $result . ");</script>";
     return $fileData;
 }
 
