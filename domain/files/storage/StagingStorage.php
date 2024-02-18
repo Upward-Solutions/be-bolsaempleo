@@ -1,11 +1,11 @@
 <?php
 
 namespace domain\files\storage;
-use MicrosoftAzure\Storage\Blob\BlobRestProxy;
-use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 
 use domain\files\FileData;
 use domain\files\Files;
+use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 
 class StagingStorage implements Files
 {
@@ -28,7 +28,6 @@ class StagingStorage implements Files
     public function save(FileData $fileData): bool
     {
         try {
-            echo '<scritp>console.log('. "Llegó hasta acá" . ')</scritp>';
             $this->storageClient->createBlockBlob($this->containerName, $fileData->name, $fileData->content);
             return true;
         } catch (ServiceException $e) {

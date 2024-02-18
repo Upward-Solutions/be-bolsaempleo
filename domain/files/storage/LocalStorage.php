@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\files\repository;
+namespace domain\files\storage;
 
 use domain\files\FileData;
 use domain\files\Files;
