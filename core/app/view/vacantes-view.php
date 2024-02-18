@@ -1,16 +1,6 @@
 <?php
 $jobs = JobData::getAllActive();
 
-function place($job): string
-{
-    if (property_exists($job, 'place_id')) {
-        $place = PlaceData::getById($job->place_id);
-        return $place->name;
-    } else {
-        return 'Lugar no disponible';
-    }
-}
-
 function category($job): string
 {
     if (property_exists($job, 'category_id')) {
