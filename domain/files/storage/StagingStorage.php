@@ -33,7 +33,8 @@ class StagingStorage implements Files
         } catch (ServiceException $e) {
             $code = $e->getCode();
             $error_message = $e->getMessage();
-            Core::alert($code. ":" .$error_message.PHP_EOL);
+            $error = $code . ":" . $error_message . PHP_EOL;
+            echo "<script>alert('" . $error . "');</script>";
             return false;
         }
     }
