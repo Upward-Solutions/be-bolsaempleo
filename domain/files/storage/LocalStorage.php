@@ -23,12 +23,7 @@ class LocalStorage implements Files
     {
         $fileName = $fileData->name;
         $fileTmpName = $_FILES['file']['tmp_name'];
-        $uploaded_file = move_uploaded_file($fileTmpName, $this->uploadDirectory . $fileName);
-        if ($uploaded_file) {
-            return "Archivo subido correctamente.";
-        } else {
-            return "Error al subir el archivo.";
-        }
+        return move_uploaded_file($fileTmpName, $this->uploadDirectory . $fileName);
     }
 
     #[NoReturn] public function read(string $fileId): FileData

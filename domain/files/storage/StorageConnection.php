@@ -22,6 +22,9 @@ class StorageConnection
         if ($environmentDetector->isDev()) {
             return new LocalStorage($this->storageUrl, $this->containerName);
         }
+        if ($environmentDetector->isStaging() || $environmentDetector->isProd()) {
+            return new StagingStorage($this->storageUrl, $this->containerName);
+        }
         return null;
     }
 }
