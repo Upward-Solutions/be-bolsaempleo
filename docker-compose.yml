@@ -32,6 +32,8 @@ services:
       DB_PORT: 3306
       DEBUG: 1
       ENVIRONMENT: dev
+      STORAGE_URL: /var/www/html/
+      CONTAINER_NAME: uploads/
     ports:
       - "8080:80"
     volumes:
