@@ -15,9 +15,10 @@
     [] Validaciones del formulario
   - Download de archivos
     [] Que funcione localmente
+[] Que se muestre loader para que no se pueda hacer más de un click en los botones de submit
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
-[] Que las búsquedas tengan un id visible
+[X] Que las búsquedas tengan un id visible
 [] Sumarle a las búsquedas un campo que sea institución y días y horarios
 
 # Test
@@ -33,6 +34,7 @@
 
 [] Agregar CDN con dominio
 [] Configuración de la infraestructura del file system
+[] Agregar versión visible con hash de commit
 [X] Warnings del pipeline
 [X] Ejecutar test e2e en el pipeline
 
