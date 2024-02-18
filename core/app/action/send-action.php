@@ -4,6 +4,7 @@ use domain\files\FileData;
 
 if (isset($_POST["accept"])) {
     $fileData = uploadFile();
+    Core::alert("Archivo guardado satisfactoriamente");
     $person = createPerson($fileData);
     $person->add();
     Core::alert("Informacion enviada exitosamente!");
