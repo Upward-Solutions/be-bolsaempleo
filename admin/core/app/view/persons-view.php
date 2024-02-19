@@ -46,14 +46,17 @@ function getStatus($user): string
                                     <td><?php echo PlaceData::getById($job->place_id)->name; ?></td>
                                     <td><?php echo getStatus($user)?></td>
                                     <td><?php echo $user->created_at; ?></td>
-                                    <td style="">
+                                    <td>
+                                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user->file; ?>">
                                         <a
+                                                style="pointer-events: none;"
                                                 href="index.php?action=download&file_id=<?php echo $user->file; ?>"
                                                 class="btn btn-primary btn-xs"
                                                 target="_blank"
                                         >
                                             Ver CV
                                         </a>
+                                        </span>
                                         <?php if ($user->status == 1): ?>
                                             <a href="index.php?action=persons&opt=accept&id=<?php echo $user->id; ?>"
                                                class="btn btn-success btn-xs">Aceptar</a>
