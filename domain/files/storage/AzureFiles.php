@@ -7,7 +7,7 @@ use domain\files\Files;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 
-class StagingStorage implements Files
+class AzureFiles implements Files
 {
     private string $containerName;
     private string $storageUrl;

@@ -6,7 +6,7 @@ use domain\files\FileData;
 use domain\files\Files;
 use JetBrains\PhpStorm\NoReturn;
 
-class LocalStorage implements Files
+class LocalFiles implements Files
 {
     private string $containerName;
     private string $storageUrl;

@@ -20,11 +20,8 @@ class StorageConnection
     {
         $environmentDetector = new EnvironmentDetector();
         if ($environmentDetector->isDev()) {
-            return new LocalStorage($this->storageUrl, $this->containerName);
+            return new LocalFiles($this->storageUrl, $this->containerName);
         }
-        if ($environmentDetector->isStaging() || $environmentDetector->isProd()) {
-            return new StagingStorage($this->storageUrl, $this->containerName);
-        }
-        return null;
+        return new AzureFiles($this->storageUrl, $this->containerName);
     }
 }
