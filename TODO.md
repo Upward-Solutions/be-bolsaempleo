@@ -18,6 +18,8 @@
     [] Que funcione localmente
     [] Que funcione en ambientes de azure
     [] Que se muestre loader para que no se pueda hacer más de un click en los botones de submit
+[] Que las acciones de las solicitudes le cambien el estado
+[] Que se eliminen los archivos cuando se elimina la solicitud
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
 [] Que las búsquedas tengan un id visible
