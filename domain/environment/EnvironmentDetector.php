@@ -22,7 +22,7 @@ class EnvironmentDetector
 
     private function get(): Environments {
         $environment = $_ENV['ENVIRONMENT'] ?? null;
-        if ($environment !== null && Environments::isValid($environment)) {
+        if ($environment !== null) {
             return Environments::from($environment);
         } else {
             return Environments::DEVELOPMENT;
