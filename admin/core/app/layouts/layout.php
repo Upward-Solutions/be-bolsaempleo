@@ -105,7 +105,7 @@ function userName(): string
         </div>
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> v1.1
+                <b>Version</b> <span id="commit-hash">{commit_hash}</span>
             </div>
             <strong>Copyright &copy; 2023 <a href="https://www.psi.uba.ar/bienestar/index.php" target="_blank">Bienestar
                     Estudiantil</a></strong>

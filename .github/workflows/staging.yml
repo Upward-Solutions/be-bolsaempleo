@@ -61,3 +61,28 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_bdca9c6e71314755ae8baee773f7d68b }}
         images: 'bolsaempleouba.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_98d6e60506894f3aae2224b13a3b6bd3 }}/bolsabe-stage:${{ github.sha }}'
+
+  print_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get commit hash
+        run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Replace commit hash in layout.php
+        run: sed -i "s/{commit_hash}/${COMMIT_HASH}/g" admin/core/app/layouts/layout.php
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add admin/core/app/layouts/layout.php
+          git commit -m "Update commit hash in layout.php"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
