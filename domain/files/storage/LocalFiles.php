@@ -4,7 +4,6 @@ namespace domain\files\storage;
 
 use domain\files\FileData;
 use domain\files\Files;
-use JetBrains\PhpStorm\NoReturn;
 
 class LocalFiles implements Files
 {
@@ -26,7 +25,7 @@ class LocalFiles implements Files
         return move_uploaded_file($fileTmpName, $this->uploadDirectory . $fileName);
     }
 
-    #[NoReturn] public function read(string $fileId): FileData
+    public function read(string $fileId): void
     {
         $filePath = $this->uploadDirectory . $_GET['file_id'];
         $originalContent = file_get_contents($filePath);

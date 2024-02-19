@@ -39,8 +39,19 @@ class AzureFiles implements Files
         }
     }
 
-    public function read(string $fileId): FileData
+    public function read(string $fileId): void
     {
-        // TODO: Implement read() method.
+        try {
+            $blob = $this->storageClient->getBlob($this->containerName, $fileId);
+            header("Content-type: " . $blob->getProperties()->getContentType());
+            header("Content-Disposition: inline; filename=" . $fileId);
+            header('Content-Length: ' . filesize($fileId));
+            readfile($fileId);
+        } catch (ServiceException $e) {
+            $code = $e->getCode();
+            $error_message = $e->getMessage();
+            $error = $code . ":" . $error_message . PHP_EOL;
+            echo "<script>alert('" . $error . "');</script>";
+        }
     }
 }
