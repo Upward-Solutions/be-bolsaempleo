@@ -36,8 +36,10 @@
 
 # Infraestructura
 
-[] Agregar CDN con dominio
 [] Agregar versión visible con hash de commit
+[] Certificado SSL
+[] Imagen y descripción de la página en SEO html
+[X] Agregar CDN con dominio
 [X] Configuración de la infraestructura del file system
 [X] Warnings del pipeline
 [X] Ejecutar test e2e en el pipeline
