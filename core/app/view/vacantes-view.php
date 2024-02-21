@@ -37,23 +37,22 @@ function getPlaceName(mixed $jb): string
 <div id="vacantes-container">
     <?php foreach ($jobs as $jb) : ?>
         <div class="vacante card border-secondary">
-            <div class="card-body">
-                <h2 class="card-title"><?= name($jb); ?></h2>
-                <div class="job-tags-container">
-                    <div class="job-icon-container">
-                        <i class="material-icons icon">local_offer</i>
-                        <p class="job-icon-text"><?php echo getCategory($jb); ?></p>
-                    </div>
-                    <div class="job-icon-container">
-                        <i class="material-icons icon">place</i>
-                        <p class="job-icon-text"><?php echo getPlaceName($jb); ?></p>
-                    </div>
+            <h2 class="card-title"><?= name($jb); ?></h2>
+            <div class="job-tags-container">
+                <div class="job-icon-container">
+                    <i class="material-icons icon">local_offer</i>
+                    <p class="job-icon-text"><?php echo getCategory($jb); ?></p>
                 </div>
-                <p class="card-text job-description"><?php echo $jb->description; ?></p>
-                <a href="./?view=job&id=<?= $jb->id ?>" class="ver-button">
-                    <i class="material-icons icon">search</i>
-                </a>
+                <div class="job-icon-container">
+                    <i class="material-icons icon">place</i>
+                    <p class="job-icon-text"><?php echo getPlaceName($jb); ?></p>
+                </div>
             </div>
+            <p class="card-text job-description"><?php echo $jb->description; ?></p>
+            <a href="./?view=job&id=<?= $jb->id ?>" class="ver-button">
+                Ver Detalle
+                <i class="material-icons icon">assignment</i>
+            </a>
         </div>
     <?php endforeach;
     if (isEmpty($jobs)) : ?>
@@ -64,6 +63,8 @@ function getPlaceName(mixed $jb): string
 <script type="text/javascript">
     const descriptions = document.getElementsByClassName("job-description")
     for (const description of descriptions) {
-        description.textContent = description.textContent.slice(0, 50) + '...';
+        if (description.length > 150) {
+            description.textContent = description.textContent.slice(0, 150) + '...'
+        }
     }
 </script>

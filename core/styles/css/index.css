@@ -29,7 +29,7 @@
   background-color: #583178;
   font-size: 40px;
   padding: 5px 15px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .layout-footer-text {
@@ -76,41 +76,67 @@
   color: #333333;
 }
 
-#vacantes-title {
-  color: #583178;
-}
-
 #vacantes-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 20px;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
 }
 
 .vacante {
   position: relative;
-  min-width: 200px;
-  width: 200px;
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  padding: 15px;
+  border-radius: 20px;
+  padding: 30px;
+  width: 600px;
+  height: 450px;
+  margin-bottom: 25px;
 }
 
 .card-text {
   margin-bottom: 10px;
+  font-size: 40px;
+  text-align: justify;
+  height: 250px;
+  max-height: 50%;
+}
+
+.card-title {
+  text-align: left;
+  font-size: 50px;
 }
 
 .ver-button {
-  width: 100%;
   position: absolute;
-  bottom: 5px;
-  right: 10px;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
   text-align: right;
-  color: #583178;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #e46c1c;
+  font-size: 45px;
+  padding: 5px 15px;
+  border-radius: 10px;
 }
 .ver-button:active, .ver-button:visited {
-  color: #583178;
+  color: white;
+}
+.ver-button i {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.ver-button {
+  text-decoration: none;
+}
+
+.ver-button:hover,
+.ver-button:visited,
+.ver-button:active {
+  text-decoration: none;
 }
 
 .job-container {
@@ -130,6 +156,7 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  font-size: 30px;
 }
 .job-tags-container .icon {
   color: #583178;
