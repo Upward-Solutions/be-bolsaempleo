@@ -36,7 +36,7 @@ function getCategory(mixed $jb): string
         <?php if (!isNullOrEmptyString($jb->limit_at)) { ?>
             <div class="job-icon-container">
                 <i class="material-icons icon">date_range</i>
-                <p class="job-icon-text">Disponible hasta: <?php echo $jb->limit_at; ?></p>
+                <p class="job-icon-text">Fecha límite: <?php echo date("d/m/Y", strtotime($jb->limit_at)); ?></p>
             </div>
         <?php } ?>
     </div>
