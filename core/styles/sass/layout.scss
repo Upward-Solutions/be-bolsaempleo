@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  height: 60px;
+  height: 70px;
   background-color: $orange;
   padding: 5px 20px;
 }
@@ -37,6 +37,7 @@
 .layout-footer-text {
   text-align: center;
   color: $grey;
+  margin-top: 15px;
 
   & a {
     text-decoration: none;

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  height: 60px;
+  height: 70px;
   background-color: #e46c1c;
   padding: 5px 20px;
 }
@@ -35,6 +35,7 @@
 .layout-footer-text {
   text-align: center;
   color: #333333;
+  margin-top: 15px;
 }
 .layout-footer-text a {
   text-decoration: none;
@@ -60,19 +61,11 @@
 }
 
 .index-logo {
-  width: 550px;
+  width: 850px;
 }
 
 .index-text-container {
   width: 100%;
-}
-.index-text-container h2 {
-  color: #333333;
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-family: "opens sans", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.1;
 }
 
 .index-text {

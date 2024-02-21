@@ -10,7 +10,7 @@
     </head>
     <body>
         <nav class="navbar">
-            <a class="layout-menu-item" href="./"><h2 class="layout-title">Bienestar Estudiantil</h2></a>
+            <a class="layout-menu-item" href="./"><h2 class="layout-title">Bolsa de Empleo</h2></a>
             <a class="layout-menu-item" href="./?view=vacantes">Vacantes</a>
         </nav>
         <div id="content">
