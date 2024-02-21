@@ -6,12 +6,14 @@
   .job-title {
     color: $grey;
     margin-bottom: 10px;
+    font-size: 60px;
   }
 }
 
 .job-tags-container {
   display: flex;
   gap: 10px;
+  justify-content: center;
   margin: 10px 0 30px;
 
   .job-icon-container {
@@ -31,30 +33,31 @@
 }
 
 .job-description-container {
+  margin-top: 50px;
   .job-subtitle {
     color: $grey;
     margin-top: 10px;
     margin-bottom: 5px;
+    font-size: 40px;
   }
 
   .job-description-text {
     color: $grey;
+    font-size: 30px;
   }
 }
 
 .job-apply-button {
-  margin-top: 20px;
+  margin: 50px auto 0;
   background-color: $darkViolet;
-  color: $lowGrey;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 10px 30px;
-  display: block;
-
-  &:hover {
-    color: white;
-  }
+  padding: 20px 30px;
+  font-size: 20px;
+  width: 80%;
+  max-width: 600px;
 }
 
 dialog {

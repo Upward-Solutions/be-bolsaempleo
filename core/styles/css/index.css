@@ -179,11 +179,13 @@
 .job-container .job-title {
   color: #333333;
   margin-bottom: 10px;
+  font-size: 60px;
 }
 
 .job-tags-container {
   display: flex;
   gap: 10px;
+  justify-content: center;
   margin: 10px 0 30px;
 }
 .job-tags-container .job-icon-container {
@@ -199,27 +201,31 @@
   color: #9E9C9C;
 }
 
+.job-description-container {
+  margin-top: 50px;
+}
 .job-description-container .job-subtitle {
   color: #333333;
   margin-top: 10px;
   margin-bottom: 5px;
+  font-size: 40px;
 }
 .job-description-container .job-description-text {
   color: #333333;
+  font-size: 30px;
 }
 
 .job-apply-button {
-  margin-top: 20px;
+  margin: 50px auto 0;
   background-color: #583178;
-  color: #9E9C9C;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 10px 30px;
-  display: block;
-}
-.job-apply-button:hover {
-  color: white;
+  padding: 20px 30px;
+  font-size: 20px;
+  width: 80%;
+  max-width: 600px;
 }
 
 dialog {
