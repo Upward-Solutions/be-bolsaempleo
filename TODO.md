@@ -5,6 +5,10 @@
 [] Responsive de la home que no se achique demasiado el texto
 [] Responsive de la vista de vacantes. Que se auto ajuste la grilla de vacantes
 [] Responsive de la carga de información para aplicar a una vacante.
+[] Priorizar el botón para redirigir a vacantes.
+[] Qué pasa con el estado de la solicitud?
+[] Sacar términos y condiciones
+[] Height del content de layout
 
 ## Funcionales
 
@@ -15,7 +19,7 @@
     [] Validaciones de las características del file
     [] Validaciones del formulario
   - Download de archivos
-    [] Que funcione localmente
+    [X] Que funcione localmente
     [] Que funcione en ambientes de azure
     [] Que se muestre loader para que no se pueda hacer más de un click en los botones de submit
 [] Que las acciones de las solicitudes le cambien el estado
