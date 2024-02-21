@@ -20,7 +20,7 @@ function getCategory(mixed $jb): string
 
 <div class="job-container">
     <h1 class="job-title"><?php echo $jb->name; ?></h1>
-    <div class="job-tags-container-detail">
+    <div class="job-tags-container detail">
         <?php if (!isNullOrEmptyString(getPlaceName($jb))) { ?>
             <div class="job-icon-container">
                 <i class="material-icons icon">place</i>

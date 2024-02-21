@@ -31,10 +31,10 @@
     color: $lowGrey;
     font-size: 15px;
   }
-}
 
-.job-tags-container-detail {
-  justify-content: center;
+  &.detail {
+    justify-content: center;
+  }
 }
 
 .job-description-container {

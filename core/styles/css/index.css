@@ -201,8 +201,7 @@
   color: #9E9C9C;
   font-size: 15px;
 }
-
-.job-tags-container-detail {
+.job-tags-container.detail {
   justify-content: center;
 }
 
