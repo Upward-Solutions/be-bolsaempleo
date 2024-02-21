@@ -63,8 +63,8 @@ function getPlaceName(mixed $jb): string
 <script type="text/javascript">
     const descriptions = document.getElementsByClassName("job-description")
     for (const description of descriptions) {
-        if (description.length > 150) {
-            description.textContent = description.textContent.slice(0, 150) + '...'
+        if (description.length > 50) {
+            description.textContent = description.textContent.slice(0, 50) + '...'
         }
     }
 </script>
