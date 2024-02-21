@@ -1,7 +1,7 @@
 describe('Layout test', () => {
     context('WEB', () => {
         it('Título', () => {
-            cy.get('.layout-title').should('contain', 'Bienestar Estudiantil')
+            cy.get('.layout-title').should('contain', 'Bolsa de Empleo')
         })
 
         it('Menú', () => {
@@ -17,7 +17,7 @@ describe('Layout test', () => {
 
     context('MOBILE', () => {
         it('Título', () => {
-            cy.get('.layout-title').should('contain', 'Bienestar Estudiantil')
+            cy.get('.layout-title').should('contain', 'Bolsa de Empleo')
         })
 
         it('Menú', () => {
