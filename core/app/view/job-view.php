@@ -87,5 +87,11 @@ function getCategory(mixed $jb): string
         closeButton.addEventListener('click', function () {
             modal.close()
         })
+
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.close()
+            }
+        });
     </script>
 </div>
