@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   margin: 30px 0;
+  gap: 30px;
 }
 
 .vacante {
@@ -14,7 +15,6 @@
   padding: 30px;
   width: 600px;
   height: 450px;
-  margin-bottom: 25px;
 }
 
 .card-text {
@@ -63,4 +63,24 @@
 .ver-button:visited,
 .ver-button:active {
   text-decoration: none;
+}
+
+@media screen and (min-device-width: 700px) {
+  #vacantes-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .vacante {
+    width: 330px;
+  }
+
+  .card-text {
+    font-size: 30px;
+  }
+
+  .card-title {
+    font-size: 40px;
+  }
 }

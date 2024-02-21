@@ -23,3 +23,20 @@
   text-align: justify;
   color: $grey;
 }
+
+.to-jobs-on-text {
+  text-decoration: none;
+}
+.to-jobs-on-text:hover,
+.to-jobs-on-text:visited,
+.to-jobs-on-text:active {
+  text-decoration: none;
+}
+
+.to-jobs-on-text:last-child {
+  color: white;
+  background-color: $darkViolet;
+  font-size: 40px;
+  padding: 2px 15px;
+  border-radius: 10px;
+}

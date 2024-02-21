@@ -28,6 +28,7 @@
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
 [] Que las búsquedas tengan un id visible
+[] Buscador de ofertas
 [] Sumarle a las búsquedas un campo que sea institución y días y horarios
 
 # Test
