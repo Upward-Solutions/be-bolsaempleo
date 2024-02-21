@@ -70,8 +70,8 @@ function getPlaceName(mixed $jb): string
 
     const places = document.getElementsByClassName("place")
     for (const place of places) {
-        if (place.textContent.length > 10) {
-            place.textContent = place.textContent.slice(0, 10) + '...'
+        if (place.textContent.length > 20) {
+            place.textContent = place.textContent.slice(0, 20) + '...'
         }
     }
 </script>
