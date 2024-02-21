@@ -2,13 +2,13 @@
 
 ## Diseño
 
-[] Responsive de la home que no se achique demasiado el texto
 [] Responsive de la vista de vacantes. Que se auto ajuste la grilla de vacantes
 [] Responsive de la carga de información para aplicar a una vacante.
-[] Priorizar el botón para redirigir a vacantes.
 [] Qué pasa con el estado de la solicitud?
 [] Sacar términos y condiciones
-[] Height del content de layout
+[X] Responsive de la home que no se achique demasiado el texto
+[X] Priorizar el botón para redirigir a vacantes.
+[X] Height del content de layout
 
 ## Funcionales
 
