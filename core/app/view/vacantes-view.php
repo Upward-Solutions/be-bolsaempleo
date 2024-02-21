@@ -45,7 +45,7 @@ function getPlaceName(mixed $jb): string
                 </div>
                 <div class="job-icon-container">
                     <i class="material-icons icon">place</i>
-                    <p class="job-icon-text"><?php echo getPlaceName($jb); ?></p>
+                    <p class="job-icon-text place"><?php echo getPlaceName($jb); ?></p>
                 </div>
             </div>
             <p class="card-text job-description"><?php echo $jb->description; ?></p>
@@ -65,6 +65,13 @@ function getPlaceName(mixed $jb): string
     for (const description of descriptions) {
         if (description.textContent.length > 100) {
             description.textContent = description.textContent.slice(0, 100) + '...'
+        }
+    }
+
+    const places = document.getElementsByClassName("place")
+    for (const place of places) {
+        if (place.textContent.length > 10) {
+            place.textContent = place.textContent.slice(0, 10) + '...'
         }
     }
 </script>
