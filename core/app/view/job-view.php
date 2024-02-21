@@ -73,7 +73,6 @@ function getCategory(mixed $jb): string
                     <label for="cv">Adjuntar CV en PDF</label>
                     <input type="file" name="file" id="cv" required>
                 </div>
-                <label><input type="checkbox" name="accept" required> Acepto los t&eacute;rminos y condiciones</label>
                 <button type="submit" class="job-apply-button" id="postularme-open-button">ENVIAR</button>
             </form>
         </div>

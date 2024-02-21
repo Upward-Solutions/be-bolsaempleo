@@ -64,19 +64,29 @@ dialog {
   margin: auto;
   padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 
   #close-modal-button {
     cursor: pointer;
     margin-left: 80vw;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .form-group {
     display: flex;
-    max-width: 500px;
+    width: 70%;
     gap: 2px;
     flex-direction: column;
     margin-bottom: 20px;
+
+    label {
+      text-align: left;
+    }
 
     input {
       padding: 5px 0;
@@ -87,8 +97,9 @@ dialog {
     }
   }
 
-  input[type="checkbox"] {
+  input[type="file"] {
     accent-color: $darkViolet;
     border: none;
+    text-indent: 0;
   }
 }

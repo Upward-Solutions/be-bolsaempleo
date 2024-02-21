@@ -232,18 +232,26 @@ dialog {
   margin: auto;
   padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 dialog #close-modal-button {
   cursor: pointer;
   margin-left: 80vw;
 }
+dialog form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 dialog .form-group {
   display: flex;
-  max-width: 500px;
+  width: 70%;
   gap: 2px;
   flex-direction: column;
   margin-bottom: 20px;
+}
+dialog .form-group label {
+  text-align: left;
 }
 dialog .form-group input {
   padding: 5px 0;
@@ -252,9 +260,10 @@ dialog .form-group input {
   border-radius: 5px;
   border: solid 0.5px #583178;
 }
-dialog input[type=checkbox] {
+dialog input[type=file] {
   accent-color: #583178;
   border: none;
+  text-indent: 0;
 }
 
 * {
