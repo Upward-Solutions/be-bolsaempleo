@@ -13,8 +13,7 @@
 }
 
 .index-text-container {
-  width: 550px;
-  min-width: 450px;
+  width: 100%;
   & h2 {
     color: $grey;
     font-size: 30px;
@@ -31,11 +30,4 @@
   line-height: 1.5;
   text-align: justify;
   color: $grey;
-}
-
-@media screen and (max-width: 1000px){
-  .index-container {
-    align-items: flex-start;
-    height: fit-content;
-  }
 }

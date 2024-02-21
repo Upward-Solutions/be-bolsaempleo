@@ -1,10 +1,5 @@
 @import "vars";
 
-$sm: 568px;
-$md: 768px;
-$lg: 1024px;
-$xl: 1280px;
-
 #vacantes-title {
   color: $darkViolet;
 }
@@ -40,77 +35,5 @@ $xl: 1280px;
 
   &:active, &:visited {
     color: $darkViolet;
-  }
-}
-
-@media screen and (max-width: $sm) {
-
-  .navbar{
-    height: 80px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  #content{
-    width: 100%;
-  }
-
-  #vacantes-container {
-    display: inline-block;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .vacante{
-    width: 300px;
-    height: 200px;
-    margin: auto;
-  }
-
-  .layout-footer-text{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: $orange;
-    padding: 10px;
-    color: white;
-  }
-}
-
-@media (min-width: $sm) and (max-width: $md) {
-}
-
-
-@media screen and (min-width: $md) {
-  .navbar{
-    height: 50px;
-  }
-
-  #vacantes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .vacante{
-    position: relative;
-    min-width: 200px;
-    width: 400px;
-  }
-}
-
-@media screen and (min-width: $lg) {
-  .vacante{
-    min-width: 200px;
-    width: 250px;
-    padding: 50px;
-  }
-  #vacantes-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 20px;
-    justify-content: space-between;
   }
 }

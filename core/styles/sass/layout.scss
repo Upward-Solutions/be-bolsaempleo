@@ -2,10 +2,10 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
-  height: 5vh;
+  height: 60px;
   background-color: $orange;
   padding: 5px 20px;
 }
@@ -13,18 +13,25 @@
 .layout-title {
   color: $darkViolet;
   margin-right: 10px;
+  font-size: 50px;
 }
 
 .layout-menu-item {
   text-decoration: none;
-  color: white;
 }
 
 .layout-menu-item:hover,
 .layout-menu-item:visited,
 .layout-menu-item:active {
   text-decoration: none;
+}
+
+.layout-menu-item:last-child {
   color: white;
+  background-color: $darkViolet;
+  font-size: 40px;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
 .layout-footer-text {
@@ -42,10 +49,8 @@
   }
 }
 
-
-@media screen and (max-width: 1000px){
-  #content {
-    height: fit-content;
-    margin-bottom: 20px;
-  }
+#content {
+  text-align: center;
+  margin: 0 10vw;
+  min-height: 90vh;
 }
