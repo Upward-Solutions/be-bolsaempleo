@@ -135,7 +135,7 @@
   align-items: center;
   color: white;
   background-color: #e46c1c;
-  font-size: 45px;
+  font-size: 25px;
   padding: 5px 15px;
   border-radius: 10px;
 }
@@ -199,6 +199,7 @@
 }
 .job-tags-container .job-icon-text {
   color: #9E9C9C;
+  font-size: 15px;
 }
 
 .job-description-container {
