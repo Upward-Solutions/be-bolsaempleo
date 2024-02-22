@@ -2,9 +2,9 @@
 function getStatus($user): string
 {
     return match ($user->status) {
-        1 => "Pendiente",
-        2 => "Aceptado",
-        0 => "Rechazado",
+        "1" => "Pendiente",
+        "2" => "Aceptado",
+        "0" => "Rechazado",
         default => "Estado desconocido",
     };
 }

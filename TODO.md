@@ -2,7 +2,7 @@
 
 ## Diseño
 
-[] Qué pasa con el estado de la solicitud?
+[X] Qué pasa con el estado de la solicitud?
 [X] Responsive de la vista de vacantes. Que se auto ajuste la grilla de vacantes
 [X] Responsive de la carga de información para aplicar a una vacante.
 [X] Sacar términos y condiciones
