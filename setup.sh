@@ -124,5 +124,9 @@ fi
 print_progress
 echo
 
+# setup php
+# sudo apt-get install php-xml
+# sudo apt-get install php-curl
+# composer dump-autoload
 
 echo 'DONE'
