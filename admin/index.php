@@ -9,6 +9,8 @@ if ($debug) {
     error_reporting(E_ALL);
 }
 
+include "../domain/autoload.php";
+include "../vendor/autoload.php";
 include "core/autoload.php";
 
 ob_start();
