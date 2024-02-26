@@ -20,4 +20,3 @@ include "controller/Session.php";
 include "controller/Lb.php";
 include "controller/Form.php";
 include "controller/class.upload.php";
-include "domain/autoload.php";
