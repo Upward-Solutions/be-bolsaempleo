@@ -47,9 +47,7 @@ function getStatus($user): string
                                     <td><?php echo getStatus($user)?></td>
                                     <td><?php echo $user->created_at; ?></td>
                                     <td>
-                                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user->file; ?>">
                                         <a
-                                                style="pointer-events: none;"
                                                 href="index.php?action=download&file_id=<?php echo $user->file; ?>"
                                                 class="btn btn-primary btn-xs"
                                                 target="_blank"
