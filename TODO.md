@@ -10,6 +10,11 @@
 [X] Responsive de la home que no se achique demasiado el texto
 [X] Priorizar el botón para redirigir a vacantes.
 [X] Height del content de layout
+Página
+1. La palabra vacantes se va por búsquedas
+2. En el back que al pisar cada oferta puedas entrar a los cvs de esa oferts3.  Que en el back cada oferta tenga un ID.
+4. Cartel con número de búsquedas en el inicio
+5. Fotos reales de estudiantes en BE en inicio
 
 ## Funcionales
 
