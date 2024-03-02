@@ -1,7 +1,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <h1>Vacantes de Trabajo</h1>
+            <h1>Ofertas de Trabajo</h1>
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                 Nueva Vacante
             </button>
@@ -247,7 +247,7 @@
 
 
             } else {
-                echo "<p class='alert alert-danger'>No hay Vacantes de Trabajo</p>";
+                echo "<p class='alert alert-danger'>No hay Ofertas de Trabajo</p>";
             }
 
 

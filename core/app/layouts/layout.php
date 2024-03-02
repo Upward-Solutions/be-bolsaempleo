@@ -11,7 +11,7 @@
     <body>
         <nav class="navbar">
             <a class="layout-menu-item" href="./"><h2 class="layout-title">Bolsa de Empleo</h2></a>
-            <a class="layout-menu-item" href="./?view=vacantes">Vacantes</a>
+            <a class="layout-menu-item" href="./?view=vacantes">Ofertas</a>
         </nav>
         <div id="content">
             <?php View::load("index"); ?>

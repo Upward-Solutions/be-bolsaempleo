@@ -48,7 +48,7 @@
             <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
             <li><a href="./index.php?view=persons"><i class='fa fa-file-text'></i> <span>Solicitudes</span></a>
             </li>
-            <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Vacantes</span></a>
+            <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Ofertas</span></a>
             </li>
             <li class="treeview">
                 <a href="#">

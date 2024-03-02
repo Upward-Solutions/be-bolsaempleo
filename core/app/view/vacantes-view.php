@@ -56,7 +56,7 @@ function getPlaceName(mixed $jb): string
         </div>
     <?php endforeach;
     if (isEmpty($jobs)) : ?>
-        <p class="alert alert-warning">No hay vacantes de trabajo por el momento.</p>
+        <p class="alert alert-warning">No hay ofertas de trabajo por el momento.</p>
     <?php endif; ?>
 </div>
 
