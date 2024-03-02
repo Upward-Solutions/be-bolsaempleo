@@ -42,11 +42,7 @@ class AzureFiles implements Files
     public function read(string $fileId): void
     {
         try {
-            $blob = $this->storageClient->getBlob($this->containerName, $fileId);
-            header("Content-type: " . $blob->getProperties()->getContentType());
-            header("Content-Disposition: inline; filename=" . $fileId);
-            header('Content-Length: ' . filesize($fileId));
-            readfile($fileId);
+            echo '<script>window.open("https://bolsafilesdev.blob.core.windows.net/' . $this->containerName . '/' . $fileId . '", "_blank");</script>';
         } catch (ServiceException $e) {
             $code = $e->getCode();
             $error_message = $e->getMessage();
