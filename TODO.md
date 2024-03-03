@@ -3,6 +3,10 @@
 ## Diseño
 
 [] Alertas y mensajes al usuario
+[] La palabra vacantes se va por búsquedas
+[] En el back que al pisar cada oferta puedas entrar a los cvs de esa oferts3.  Que en el back cada oferta tenga un ID.
+[] Cartel con número de búsquedas en el inicio
+[] Fotos reales de estudiantes en BE en inicio
 [X] Qué pasa con el estado de la solicitud?
 [X] Responsive de la vista de vacantes. Que se auto ajuste la grilla de vacantes
 [X] Responsive de la carga de información para aplicar a una vacante.
@@ -10,32 +14,20 @@
 [X] Responsive de la home que no se achique demasiado el texto
 [X] Priorizar el botón para redirigir a vacantes.
 [X] Height del content de layout
-Página
-1. La palabra vacantes se va por búsquedas
-2. En el back que al pisar cada oferta puedas entrar a los cvs de esa oferts3.  Que en el back cada oferta tenga un ID.
-4. Cartel con número de búsquedas en el inicio
-5. Fotos reales de estudiantes en BE en inicio
 
 ## Funcionales
 
-+ Adaptar código de php para el file system de azure
-  - Upload de archivos
-    [x] Que funcione localmente
-    [x] Que funcione en ambientes de azure
-    [] Validaciones de las características del file
-    [] Validaciones del formulario
-  - Download de archivos
-    [X] Que funcione localmente
-    [] Que funcione en ambientes de azure
-    [] Que se muestre loader para que no se pueda hacer más de un click en los botones de submit
+[] Validaciones de las características del file
+[] Validaciones del formulario
+[] Que se muestre loader para que no se pueda hacer más de un click en los botones de submit
 [] Paginador de vacantes
-[] Que las acciones de las solicitudes le cambien el estado
 [] Que se eliminen los archivos cuando se elimina la solicitud
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
 [] Que las búsquedas tengan un id visible
 [] Buscador de ofertas
 [] Sumarle a las búsquedas un campo que sea institución y días y horarios
+[x] Que las acciones de las solicitudes le cambien el estado
 
 # Test
 
@@ -49,8 +41,8 @@ Página
 # Infraestructura
 
 [] Agregar versión visible con hash de commit
-[] Certificado SSL
 [] Imagen y descripción de la página en SEO html
+[x] Certificado SSL
 [X] Agregar CDN con dominio
 [X] Configuración de la infraestructura del file system
 [X] Warnings del pipeline
