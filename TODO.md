@@ -4,7 +4,7 @@
 
 [] Alertas y mensajes al usuario
 [] La palabra vacantes se va por búsquedas
-[] En el back que al pisar cada oferta puedas entrar a los cvs de esa oferts3.  Que en el back cada oferta tenga un ID.
+[] En el back que al pisar cada oferta puedas entrar a los cvs de esa oferts3.
 [] Cartel con número de búsquedas en el inicio
 [] Fotos reales de estudiantes en BE en inicio
 [X] Qué pasa con el estado de la solicitud?
@@ -26,6 +26,7 @@
 [] UTF-8 en la base de datos
 [] Buscador de ofertas
 [] Sumarle a las búsquedas un campo que sea institución y días y horarios
+[x] Que se muestre loader en las acciones asincrónicas de la vista pública
 [X] Que las búsquedas tengan un id visible
 [X] Que las solicitudes tengan un id visible
 [x] Que las acciones de las solicitudes le cambien el estado

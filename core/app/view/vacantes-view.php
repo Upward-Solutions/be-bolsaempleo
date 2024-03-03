@@ -1,5 +1,7 @@
 <?php
+echo '<script>showLoader()</script>';
 $jobs = JobData::getAllActive();
+echo '<script>hideLoader()</script>';
 
 function category($job): string
 {

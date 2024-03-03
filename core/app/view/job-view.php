@@ -1,5 +1,7 @@
 <?php
+echo '<script>showLoader()</script>';
 $jb = JobData::getById($_GET["id"]);
+echo '<script>hideLoader()</script>';
 
 function isNullOrEmptyString($str): bool
 {

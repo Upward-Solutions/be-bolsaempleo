@@ -7,29 +7,11 @@
 
 class Core
 {
-    public static $debug_sql = false;
+    public static bool $debug_sql = false;
     public static $post;
     public static $get;
 
-    public static function includeCSS()
-    {
-        $path = "res/css/";
-        $handle = opendir($path);
-        if ($handle) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    $fullpath = $path . $entry;
-                    if (!is_dir($fullpath)) {
-                        echo "<link rel='stylesheet' type='text/css' href='" . $fullpath . "' />";
-
-                    }
-                }
-            }
-            closedir($handle);
-        }
-    }
-
-    public static function addFlash($type, $message)
+    public static function addFlash($type, $message): void
     {
 
         $flash = "<p class='alert alert-" . $type . "'>" . $message . "<p>";
@@ -43,32 +25,23 @@ class Core
 
     }
 
-
-    public static function getFlashes()
-    {
-
-        if (isset($_SESSION["flashes"])) {
-            $flashes = $_SESSION["flashes"];
-            foreach ($flashes as $f) {
-                echo $f;
-            }
-            unset($_SESSION["flashes"]);
-        }
-
-    }
-
-
-    public static function redir($url)
+    public static function redir($url): void
     {
         echo "<script>window.location='" . $url . "';</script>";
     }
 
-    public static function alert($txt)
+    public static function alert($txt): void
     {
         echo "<script>alert('" . $txt . "');</script>";
     }
 
-    public static function g($f, $v)
+    public static function loader(): void
+    {
+        echo '<link href="../../res/loader/loader.css" rel="stylesheet">';
+        echo '<div class="loader-container"><div class="loader"></div></div>';
+    }
+
+    public static function g($f, $v): bool
     {
         $ret = false;
         if (isset($_GET[$f]) && $_GET[$f] == $v) {
@@ -80,32 +53,10 @@ class Core
     public static function num($n)
     {
         if (is_numeric($n)) {
-            return number_format($n, 2, ".", ",");
+            return number_format($n, 2);
         } else {
             return $n;
         }
     }
 
-    public static function includeJS()
-    {
-        $path = "res/js/";
-        $handle = opendir($path);
-        if ($handle) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    $fullpath = $path . $entry;
-                    if (!is_dir($fullpath)) {
-                        echo "<script type='text/javascript' src='" . $fullpath . "'></script>";
-
-                    }
-                }
-            }
-            closedir($handle);
-        }
-
-    }
-
 }
-
-
-?>

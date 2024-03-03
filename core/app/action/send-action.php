@@ -3,12 +3,11 @@
 use domain\files\FileData;
 use domain\files\storage\StorageConnection;
 
+Core::loader();
 $fileData = uploadFile();
 $person = createPerson($fileData);
 $person->add();
 Core::alert("Informacion enviada exitosamente!");
-
-
 Core::redir("./?view=job&id=$_POST[job_id]");
 
 
