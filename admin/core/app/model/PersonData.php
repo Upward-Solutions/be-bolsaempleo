@@ -6,6 +6,7 @@ class PersonData {
 
 
 	public function PersonData(){
+        $this->id = "";
 		$this->name = "";
 		$this->lastname = "";
 		$this->email = "";

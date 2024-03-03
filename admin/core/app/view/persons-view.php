@@ -38,7 +38,7 @@ function getStatus($user): string
                                 $job = JobData::getById($user->job_id);
                                 ?>
                                 <tr>
-                                    <td><?php echo $user->job_id ?></td>
+                                    <td><?php echo $user->id ?></td>
                                     <td><?php echo $user->name . " " . $user->lastname; ?></td>
                                     <td><?php echo $user->email; ?></td>
                                     <td><?php echo $job->name; ?></td>
