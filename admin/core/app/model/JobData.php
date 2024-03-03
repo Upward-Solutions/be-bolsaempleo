@@ -5,6 +5,7 @@ class JobData {
 
 
 	public function JobData(){
+		$this->id = "";
 		$this->name = "";
 		$this->lastname = "";
 		$this->email = "";

@@ -87,6 +87,7 @@
                     <div class="box-body">
                         <table class="table table-bordered table-hover datatable">
                             <thead>
+                                <th>Id</th>
                                 <th>Titulo</th>
                                 <th>Fecha limite</th>
                                 <th>Categoria</th>
@@ -99,6 +100,7 @@
                             foreach ($users as $user) {
                                 ?>
                                 <tr>
+                                    <td><?php echo $user->id; ?></td>
                                     <td><?php echo $user->name; ?></td>
                                     <td><?php echo $user->limit_at; ?></td>
                                     <td><?php echo CategoryData::getById($user->category_id)->name; ?></td>
