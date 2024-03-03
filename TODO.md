@@ -24,9 +24,10 @@
 [] Que se eliminen los archivos cuando se elimina la solicitud
 [] Que se pueda editar una categoría
 [] UTF-8 en la base de datos
-[] Que las búsquedas tengan un id visible
 [] Buscador de ofertas
 [] Sumarle a las búsquedas un campo que sea institución y días y horarios
+[X] Que las búsquedas tengan un id visible
+[X] Que las solicitudes tengan un id visible
 [x] Que las acciones de las solicitudes le cambien el estado
 
 # Test
