@@ -8,6 +8,10 @@
         <link href="../../../core/styles/css/index.css.map" rel='stylesheet'>
         <link href="../../../res/loader/loader.css" rel='stylesheet'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400" rel="stylesheet">
+        <style>
+            body { font-family: 'Montserrat', sans-serif !important; }
+        </style>
     </head>
     <body>
         <nav class="navbar">
