@@ -56,20 +56,20 @@ function getCategory(mixed $jb): string
             <form method="post" action="./?action=send" enctype="multipart/form-data">
                 <input type="hidden" name="job_id" value="<?php echo $jb->id; ?>">
                 <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                    <label for="name">Nombres</label>
+                    <input type="text" name="name" id="name" placeholder="Nombres" required>
                 </div>
                 <div class="form-group">
                     <label for="last-name">Apellidos</label>
                     <input type="text" name="lastname" id="last-name" placeholder="Apellidos" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Telefono</label>
-                    <input type="text" name="phone" required id="phone" placeholder="Telefono">
+                    <label for="phone">Teléfono</label>
+                    <input type="text" name="phone" required id="phone" placeholder="Teléfono">
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo electronico</label>
-                    <input type="email" name="email" required id="email" placeholder="Correo electronico">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" required id="email" placeholder="Correo electrónico">
                 </div>
                 <div class="form-group">
                     <label for="cv">Adjuntar CV en PDF</label>
