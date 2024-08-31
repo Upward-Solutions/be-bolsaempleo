@@ -47,12 +47,12 @@ class JobData {
 
 	}
 	
-		public static function getAllActive(){
-		$sql = "select * from ".self::$tablename." where status=1";
+	public static function getAllActive(){
+		$sql = "select * from ".self::$tablename." where status=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new JobData());
-
 	}
+
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where name like '%$q%'";
 		$query = Executor::doit($sql);

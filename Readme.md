@@ -90,7 +90,7 @@ Este archivo README proporciona instrucciones para ejecutar el script `local-run
 
    [X] Como URGENTE cambiar la letra, a Monserrat.
    [] Cómo URGENTE cambiar la contraseña, la actual es admin igual que el usuario y es totalmente insegura.
-   [] Invertir el orden de como se muestran las ofertas publicadas (que se vean primero las últimas subidas) actualmente se visualiza primero la primera que cargamos hace mil
+   [X] Invertir el orden de como se muestran las ofertas publicadas (que se vean primero las últimas subidas) actualmente se visualiza primero la primera que cargamos hace mil
    [] Arreglar el texto que está antes de que carguen el cv y que especifique que el documento debe tener su nombre y apellido.
    [] Corregir ortografía (lo vimos con gonza, tengo la captura en la PC de be, después te muestro)
    [] Después se podría agregar una función para que quienes entren a ver las ofertas puedan filtrar una opcion estudiantes/graduados así es más fácil de ver a qué oferta se pueden postular
