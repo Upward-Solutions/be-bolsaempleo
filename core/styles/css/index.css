@@ -36,7 +36,6 @@
   text-align: center;
   color: #333333;
   margin-top: 15px;
-  font-size: 10px;
 }
 .layout-footer-text a {
   text-decoration: none;
@@ -72,7 +71,7 @@
 .index-text {
   font-size: 20px;
   font-weight: 200;
-  line-height: 2;
+  line-height: 1.5;
   text-align: justify;
   color: #333333;
 }
@@ -90,7 +89,7 @@
 .to-jobs-on-text:last-child {
   color: white;
   background-color: #583178;
-  font-size: 20px;
+  font-size: 40px;
   padding: 2px 15px;
   border-radius: 10px;
 }
@@ -231,6 +230,12 @@
   font-size: 20px;
   width: 80%;
   max-width: 600px;
+}
+
+#formato-archivo {
+  font-size: 15px;
+  text-align: left;
+  color: #583178;
 }
 
 dialog {
