@@ -12,7 +12,6 @@ class Action {
 	**/	
 	public static function load($action){
 		// Module::$module;
-		
 		if(!isset($_GET['action'])){
 			include "core/app/action/".$action."-action.php";
 		}else{

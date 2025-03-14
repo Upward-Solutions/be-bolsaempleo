@@ -2,8 +2,10 @@
 
 namespace domain\files\storage;
 
+use Core;
 use domain\files\FileData;
 use domain\files\Files;
+use ZipArchive;
 
 class LocalFiles implements Files
 {
@@ -27,7 +29,8 @@ class LocalFiles implements Files
 
     public function read(string $fileId): void
     {
-        $filePath = $this->uploadDirectory . $_GET['file_id'];
+        $safeFileId = basename($fileId);
+        $filePath = $this->uploadDirectory . $safeFileId;
         $originalContent = file_get_contents($filePath);
         if ($originalContent === false) {
             Core::alert("Error al leer el contenido del archivo.");
@@ -51,4 +54,41 @@ class LocalFiles implements Files
         }
         exit;
     }
+
+    public function readAll(array $fileIds): void
+    {
+        $zip = new ZipArchive();
+        $zipFileName = tempnam(sys_get_temp_dir(), 'download_') . '.zip';
+
+        if ($zip->open($zipFileName, ZipArchive::CREATE) !== true) {
+            Core::alert("No se pudo crear el archivo ZIP.");
+            exit;
+        }
+
+        foreach ($fileIds as $fileId) {
+            $safeFileId = basename($fileId);
+            $filePath = $this->uploadDirectory . $safeFileId;
+
+            if (file_exists($filePath) && is_readable($filePath)) {
+                $zip->addFile($filePath, $safeFileId);
+            }
+        }
+
+        $zip->close();
+
+        if (!file_exists($zipFileName)) {
+            Core::alert("Error al generar el archivo ZIP.");
+            exit;
+        }
+
+        header('Content-Type: application/zip');
+        header('Content-Disposition: attachment; filename="archivos.zip"');
+        header('Content-Length: ' . filesize($zipFileName));
+
+        readfile($zipFileName);
+
+        unlink($zipFileName);
+        exit;
+    }
+
 }

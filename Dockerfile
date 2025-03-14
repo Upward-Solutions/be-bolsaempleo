@@ -4,10 +4,10 @@ FROM php:8.2.4-apache
 # Copia un archivo de configuración personalizado de PHP a la imagen
 COPY ./php.ini /usr/local/etc/php/conf.d/
 
-# Instala las extensiones necesarias para Composer y otras dependencias
+# Instala las extensiones necesarias
 RUN apt-get update && \
-    apt-get install -y git zip unzip && \
-    docker-php-ext-install mysqli
+    apt-get install -y git zip unzip libzip-dev && \
+    docker-php-ext-install mysqli zip
 
 # Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_GET["action"])){
-	Module::loadLayout("index");
+	Module::loadLayout();
 }else{
 	Action::load($_GET["action"]);
 }

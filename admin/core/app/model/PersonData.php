@@ -3,8 +3,7 @@
 
 class PersonData {
 	public static $tablename = "person";
-
-
+    
 	public function PersonData(){
         $this->id = "";
 		$this->name = "";
@@ -20,10 +19,6 @@ class PersonData {
 		return Executor::doit($sql);
 	}
 
-	public static function delById($id){
-		$sql = "delete from ".self::$tablename." where id=$id";
-		Executor::doit($sql);
-	}
 	public function del(){
 		$sql = "delete from ".self::$tablename." where id=$this->id";
 		Executor::doit($sql);
@@ -34,17 +29,6 @@ class PersonData {
 		$sql = "update ".self::$tablename." set code=\"$this->code\",name=\"$this->name\",ruc=\"$this->ruc\",phone=\"$this->phone\",email=\"$this->email\" where id=$this->id";
 		Executor::doit($sql);
 	}
-
-	public function accept(){
-		$sql = "update ".self::$tablename." set status=2 where id=$this->id";
-		Executor::doit($sql);
-	}
-
-	public function denied(){
-		$sql = "update ".self::$tablename." set status=0 where id=$this->id";
-		Executor::doit($sql);
-	}
-
 
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";

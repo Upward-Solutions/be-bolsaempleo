@@ -46,10 +46,8 @@
             <li class="header">ADMINISTRACION</li>
             <?php $u = UserData::getById($_SESSION["user_id"]); ?>
             <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
-            <li><a href="./index.php?view=persons"><i class='fa fa-file-text'></i> <span>Solicitudes</span></a>
-            </li>
-            <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Ofertas</span></a>
-            </li>
+            <li><a href="./index.php?view=persons"><i class='fa fa-file-text'></i> <span>Solicitudes</span></a></li>
+            <li><a href="./index.php?view=jobs&opt=all"><i class='fa fa-flash'></i><span>Ofertas</span></a></li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-th-list"></i>

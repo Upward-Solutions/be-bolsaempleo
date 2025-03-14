@@ -1,7 +1,6 @@
 <?php
 
 // define('LBROOT',getcwd()); // LegoBox Root ... the server root
-// include("core/controller/Database.php");
 
 if(Session::getUID()=="") {
 $user = $_POST['mail'];
