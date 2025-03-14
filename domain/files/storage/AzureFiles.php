@@ -55,7 +55,9 @@ class AzureFiles implements Files
     public function readAll(array $fileIds): void
     {
         $date = date('Y-m-d_H-i-s');
-        $zipFullPath = tempnam(sys_get_temp_dir(), 'download_');
+        $zipTempBase = tempnam(sys_get_temp_dir(), 'download_');
+        unlink($zipTempBase);
+        $zipFullPath = $zipTempBase . '.zip';
         $zipFileName = "solicitudes-$date.zip";
 
         $zip = new ZipArchive();
