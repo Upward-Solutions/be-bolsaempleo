@@ -54,28 +54,36 @@ class AzureFiles implements Files
 
     public function readAll(array $fileIds): void
     {
-        $date = date('Y-m-d');
+        $date = date('Y-m-d_H-i-s');
         $zipFullPath = tempnam(sys_get_temp_dir(), 'download_');
         $zipFileName = "solicitudes-$date.zip";
 
         $zip = new ZipArchive();
         if ($zip->open($zipFullPath, ZipArchive::CREATE) !== true) {
-            echo "<script>alert('No se pudo crear el archivo ZIP.');</script>";
+            error_log("No se pudo crear el archivo ZIP.");
+            http_response_code(500);
             exit;
         }
 
         $tempFiles = [];
+        $fileCount = 0;
 
         foreach ($fileIds as $fileId) {
             try {
                 $blob = $this->storageClient->getBlob($this->containerName, $fileId);
                 $content = stream_get_contents($blob->getContentStream());
 
+                if ($content === false || strlen($content) === 0) {
+                    error_log("Archivo $fileId vacío o ilegible desde Azure.");
+                    continue;
+                }
+
                 $tempFilePath = tempnam(sys_get_temp_dir(), 'file_');
                 file_put_contents($tempFilePath, $content);
                 $tempFiles[] = $tempFilePath;
 
                 $zip->addFile($tempFilePath, basename($fileId));
+                $fileCount++;
             } catch (ServiceException $e) {
                 error_log("Error al descargar $fileId desde Azure: " . $e->getMessage());
             }
@@ -83,15 +91,16 @@ class AzureFiles implements Files
 
         $zip->close();
 
-        if (!file_exists($zipFullPath)) {
-            echo "<script>alert('Error al generar el archivo ZIP.');</script>";
+        if (!file_exists($zipFullPath) || $fileCount === 0) {
+            error_log("ZIP no generado o sin archivos.");
+            http_response_code(500);
             exit;
         }
 
         header('Content-Type: application/zip');
         header("Content-Disposition: attachment; filename=\"$zipFileName\"");
         header('Content-Length: ' . filesize($zipFullPath));
-
+        flush();
         readfile($zipFullPath);
 
         unlink($zipFullPath);
@@ -101,5 +110,6 @@ class AzureFiles implements Files
 
         exit;
     }
+
 
 }
