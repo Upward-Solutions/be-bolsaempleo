@@ -40,7 +40,20 @@ class PersonData {
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PersonData());
-
+	}
+	
+	public static function getAllPaginated($page = 1, $limit = 20){
+		$offset = ($page - 1) * $limit;
+		$sql = "select * from ".self::$tablename." order by created_at desc limit $limit offset $offset";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new PersonData());
+	}
+	
+	public static function countAll(){
+		$sql = "select count(*) as total from ".self::$tablename;
+		$query = Executor::doit($sql);
+		$total = $query[0]->fetch_object();
+		return $total->total;
 	}
 	
 	public static function getLike($q){
