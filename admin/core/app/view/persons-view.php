@@ -55,16 +55,46 @@ function getStatus($user): string
                         <form action="index.php" method="get" class="form-inline">
                             <input type="hidden" name="view" value="persons">
                             <div class="form-group" style="margin-right: 10px;">
-                                <label for="job_id" style="margin-right: 10px;">Filtrar por vacante:</label>
-                                <select name="job_id" id="job_id" class="form-control">
-                                    <option value="0">Todas las vacantes</option>
+                                <label for="job_search" style="margin-right: 10px;">Filtrar por vacante:</label>
+                                <input type="text" list="job-options" id="job_search" class="form-control" placeholder="Buscar o seleccionar vacante" style="width: 250px;" autocomplete="off">
+                                <datalist id="job-options">
                                     <?php foreach ($jobs as $job): ?>
-                                        <option value="<?php echo $job->id; ?>" <?php if($job_id == $job->id) echo "selected"; ?>>
-                                            <?php echo $job->name; ?>
-                                        </option>
+                                        <option data-value="<?php echo $job->id; ?>" value="<?php echo $job->name; ?>">
                                     <?php endforeach; ?>
-                                </select>
+                                </datalist>
+                                <input type="hidden" name="job_id" id="job_id" value="<?php echo $job_id; ?>">
                             </div>
+                            <script>
+                                // Script para manejar la selección del datalist
+                                document.getElementById('job_search').addEventListener('input', function() {
+                                    var input = this.value;
+                                    var jobId = 0;
+                                    var options = document.getElementById('job-options').getElementsByTagName('option');
+                                    
+                                    for (var i = 0; i < options.length; i++) {
+                                        if (options[i].value === input) {
+                                            jobId = options[i].getAttribute('data-value');
+                                            break;
+                                        }
+                                    }
+                                    
+                                    document.getElementById('job_id').value = jobId;
+                                });
+                                
+                                // Establecer el valor inicial del campo de búsqueda
+                                window.addEventListener('load', function() {
+                                    var jobId = <?php echo $job_id; ?>;
+                                    if (jobId > 0) {
+                                        var options = document.getElementById('job-options').getElementsByTagName('option');
+                                        for (var i = 0; i < options.length; i++) {
+                                            if (options[i].getAttribute('data-value') == jobId) {
+                                                document.getElementById('job_search').value = options[i].value;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
                             <button type="submit" class="btn btn-primary">
                                 <i class="fa fa-filter"></i> Filtrar
                             </button>
