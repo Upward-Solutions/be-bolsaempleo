@@ -61,8 +61,20 @@ class PersonData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PersonData());
 	}
-
-
+	
+	public static function getByJobId($job_id, $page = 1, $limit = 20){
+		$offset = ($page - 1) * $limit;
+		$sql = "select * from ".self::$tablename." where job_id=$job_id order by created_at desc limit $limit offset $offset";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new PersonData());
+	}
+	
+	public static function countByJobId($job_id){
+		$sql = "select count(*) as total from ".self::$tablename." where job_id=$job_id";
+		$query = Executor::doit($sql);
+		$total = $query[0]->fetch_object();
+		return $total->total;
+	}
 }
 
 ?>

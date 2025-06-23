@@ -17,12 +17,24 @@ function getStatus($user): string
             <h1>Solicitudes de Trabajo</h1>
             <br>
             <?php
+            // Obtener todos los trabajos para el dropdown
+            $jobs = JobData::getAll();
+            
             // Configuración de paginación
             $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
             $limit = 20; // Número de solicitudes por página
             
+            // Verificar si se está filtrando por trabajo
+            $job_id = isset($_GET['job_id']) ? intval($_GET['job_id']) : 0;
+            
             // Obtener el total de registros para calcular el número de páginas
-            $total = PersonData::countAll();
+            if ($job_id > 0) {
+                $total = PersonData::countByJobId($job_id);
+                $job_name = JobData::getById($job_id)->name;
+            } else {
+                $total = PersonData::countAll();
+                $job_name = "";
+            }
             $total_pages = ceil($total / $limit);
             
             // Asegurar que la página actual es válida
@@ -30,9 +42,41 @@ function getStatus($user): string
             if ($page > $total_pages && $total_pages > 0) $page = $total_pages;
             
             // Obtener los registros de la página actual
-            $users = PersonData::getAllPaginated($page, $limit);
+            if ($job_id > 0) {
+                $users = PersonData::getByJobId($job_id, $page, $limit);
+            } else {
+                $users = PersonData::getAllPaginated($page, $limit);
+            }
             if (count($users) > 0) {
                 ?>
+                <!-- Formulario de filtrado por vacante -->
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <form action="index.php" method="get" class="form-inline">
+                            <input type="hidden" name="view" value="persons">
+                            <div class="form-group" style="margin-right: 10px;">
+                                <label for="job_id" style="margin-right: 10px;">Filtrar por vacante:</label>
+                                <select name="job_id" id="job_id" class="form-control">
+                                    <option value="0">Todas las vacantes</option>
+                                    <?php foreach ($jobs as $job): ?>
+                                        <option value="<?php echo $job->id; ?>" <?php if($job_id == $job->id) echo "selected"; ?>>
+                                            <?php echo $job->name; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-filter"></i> Filtrar
+                            </button>
+                            <?php if($job_id > 0): ?>
+                                <a href="index.php?view=persons" class="btn btn-default" style="margin-left: 10px;">
+                                    <i class="fa fa-times"></i> Limpiar filtro
+                                </a>
+                            <?php endif; ?>
+                        </form>
+                    </div>
+                </div>
+                
                 <div class="btn-group" style="margin-bottom: 15px;">
                     <!-- Descargar CVs de la página actual -->
                     <form action="index.php?action=downloadall" method="post" style="display:inline-block; margin-right: 10px;">
@@ -44,21 +88,9 @@ function getStatus($user): string
                         </button>
                     </form>
                 </div>
-                
-                <script>
-                function confirmDownloadAll(total) {
-                    if(total > 100) {
-                        if(confirm('Estás a punto de descargar ' + total + ' archivos. Esto puede tardar mucho tiempo y causar problemas de rendimiento. ¿Deseas continuar?')) {
-                            window.location.href = 'index.php?action=downloadall&all=true';
-                        }
-                    } else {
-                        window.location.href = 'index.php?action=downloadall&all=true';
-                    }
-                }
-                </script>
                 <div class="box box-primary">
                     <div class="box-body">
-                        <table class="table table-bordered table-hover datatable">
+                        <table class="table table-bordered table-hover datatable-nosearch">
                             <thead>
                             <th>ID</th>
                             <th>Nombre completo</th>
@@ -107,7 +139,7 @@ function getStatus($user): string
                                     <!-- Botón anterior -->
                                     <li class="<?php echo ($page <= 1) ? 'disabled' : ''; ?>">
                                         <?php if($page > 1): ?>
-                                            <a href="index.php?view=persons&page=<?php echo $page-1; ?>">&laquo;</a>
+                                            <a href="index.php?view=persons&page=<?php echo $page-1; ?><?php echo $job_id > 0 ? '&job_id='.$job_id : ''; ?>">&laquo;</a>
                                         <?php else: ?>
                                             <a href="#">&laquo;</a>
                                         <?php endif; ?>
@@ -115,42 +147,31 @@ function getStatus($user): string
                                     
                                     <!-- Números de página -->
                                     <?php 
-                                    // Mostrar un número limitado de enlaces de página
                                     $start_page = max(1, $page - 2);
                                     $end_page = min($total_pages, $page + 2);
                                     
-                                    // Siempre mostrar la primera página
-                                    if($start_page > 1): ?>
-                                        <li><a href="index.php?view=persons&page=1">1</a></li>
-                                        <?php if($start_page > 2): ?>
-                                            <li class="disabled"><a href="#">...</a></li>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                    
-                                    <?php for($i = $start_page; $i <= $end_page; $i++): ?>
-                                        <li class="<?php echo ($page == $i) ? 'active' : ''; ?>">
-                                            <a href="index.php?view=persons&page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                    for($i = $start_page; $i <= $end_page; $i++): ?>
+                                        <li class="<?php echo ($i == $page) ? 'active' : ''; ?>">
+                                            <a href="index.php?view=persons&page=<?php echo $i; ?><?php echo $job_id > 0 ? '&job_id='.$job_id : ''; ?>"><?php echo $i; ?></a>
                                         </li>
                                     <?php endfor; ?>
-                                    
-                                    <!-- Siempre mostrar la última página -->
-                                    <?php if($end_page < $total_pages): ?>
-                                        <?php if($end_page < $total_pages - 1): ?>
-                                            <li class="disabled"><a href="#">...</a></li>
-                                        <?php endif; ?>
-                                        <li><a href="index.php?view=persons&page=<?php echo $total_pages; ?>"><?php echo $total_pages; ?></a></li>
-                                    <?php endif; ?>
                                     
                                     <!-- Botón siguiente -->
                                     <li class="<?php echo ($page >= $total_pages) ? 'disabled' : ''; ?>">
                                         <?php if($page < $total_pages): ?>
-                                            <a href="index.php?view=persons&page=<?php echo $page+1; ?>">&raquo;</a>
+                                            <a href="index.php?view=persons&page=<?php echo $page+1; ?><?php echo $job_id > 0 ? '&job_id='.$job_id : ''; ?>">&raquo;</a>
                                         <?php else: ?>
                                             <a href="#">&raquo;</a>
                                         <?php endif; ?>
                                     </li>
                                 <?php endif; ?>
                             </ul>
+                            
+                            <?php if ($job_id > 0): ?>
+                                <div class="pull-left">
+                                    <p class="text-muted">Mostrando solicitudes para la vacante: <strong><?php echo $job_name; ?></strong></p>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
