@@ -151,9 +151,6 @@ function getStatus($user): string
                                     </li>
                                 <?php endif; ?>
                             </ul>
-                            <div class="pull-left">
-                                <p>Mostrando <?php echo count($users); ?> de <?php echo $total; ?> solicitudes | Página <?php echo $page; ?> de <?php echo $total_pages; ?></p>
-                            </div>
                         </div>
                     </div>
                 </div>
