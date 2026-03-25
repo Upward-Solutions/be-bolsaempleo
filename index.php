@@ -1,5 +1,13 @@
 <?php
 
+// Redirigir apex a www
+$host = $_SERVER['HTTP_HOST'] ?? '';
+if ($host === 'bolsabeempleo.com.ar') {
+    $uri = $_SERVER['REQUEST_URI'] ?? '/';
+    header('Location: https://www.bolsabeempleo.com.ar' . $uri, true, 301);
+    exit;
+}
+
 $debug= getenv('DEBUG');
 if ($debug) {
     ini_set('display_errors', 1);
